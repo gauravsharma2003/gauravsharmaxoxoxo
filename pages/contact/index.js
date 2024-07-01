@@ -79,7 +79,7 @@ export default function Contact() {
             <a target="_blank">
               <div className="mt-12 md:m-auto ">
                 <h1 className="text-border text-[10vw] md:text-[7rem] whitespace-nowrap transition hover:scale-105">
-                   Gauravsharmaxo@gmail.com
+                   Sharmagauravxo@gmail.com
                 </h1>
               </div>
             </a>
