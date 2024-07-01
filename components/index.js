@@ -1,0 +1,10 @@
+export { default as Header } from "./Header";
+export { default as Footer } from "./Footer";
+export { default as HomeHeroSection } from "./HomeHeroSection";
+export { default as GallerySection } from "./GallerySection";
+export { default as SubHeader } from "./SubHeader";
+export { default as ProjectCards } from "./ProjectCards";
+export { default as SkillsSection } from "./SkillsSection";
+export { default as PageTransition } from "./PageTransition";
+export { default as Animatify } from "./Animatify";
+export { default as SEO } from "./SEO";
