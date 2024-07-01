@@ -55,7 +55,7 @@ const Home = () => {
           </a>
         </Link>
         {", do it! Also here's my "}
-        <Link href="https://github.com/Jaagrav">
+        <Link href="https://github.com/gauravsharma2003">
           <a
             className="transition text-pink hover:underline underline-offset-8"
             target="_blank"
