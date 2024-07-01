@@ -44,7 +44,7 @@ const Home = () => {
       <SubHeader title="Why hire me?" />
       <SkillsSection />
       <span className="relative z-10 block px-10 mx-auto my-16 text-xl text-center text-lightTextColor dark:text-white md:px-32">
-        {"Dude c'mon if you haven't checked me out on "}
+        {"If you haven't checked me out on "}
         <Link href="https://linkedin.com/in/gauravsharma2003/">
           <a
             className="transition text-indigo hover:underline underline-offset-8"
