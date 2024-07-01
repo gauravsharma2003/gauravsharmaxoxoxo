@@ -8,7 +8,7 @@ export default function Projects() {
     <div className="h-fit w-full">
       <SEO
         title="Projects / Gaurav Sharma"
-        desc="Take a look at these projects I made in the name of Software Development. I am quite proud of how most of them turned out. Most of them are available on GitHub, so feel free to check them out! The others are client/freelance projects."
+        desc="Take a look at these projects I made in the name of Software Development. I am quite proud of how most of them turned out. Most of them are available on GitHub, so feel free to check them out!"
         img="public/assets/images/seo/about.webp"
       />
       <SubHeader
