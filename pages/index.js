@@ -15,7 +15,8 @@ const Home = () => {
         <meta
           name="description"
           content="I am a very nice and humble front-end developer. I can design a website, develop it using ReactJS, and deploy it on Vercel. Well that’s what I did for this website, if you want to know more, keep scrolling."
-        />
+           img="public/assets/images/seo/about.webp"
+            />
         {/* Other meta tags */}
       </Head>
       <HomeHeroSection />
