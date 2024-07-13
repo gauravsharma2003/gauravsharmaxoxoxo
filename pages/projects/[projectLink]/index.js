@@ -21,7 +21,7 @@ export default function Page({ project, randomProject }) {
         const githubRepoData = await octokit.request(
           "GET /repos/{username}/{repo}",
           {
-            username: "Jaagrav",
+            username: "gauravsharma2003",
             repo: project.link,
           }
         );
