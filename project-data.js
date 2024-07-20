@@ -1,5 +1,26 @@
 const projectData = [
   {
+    title: "Shoe-ping (E-Commerce)",
+    miniDesc:
+      "A web application that showcases a collection of shoes, allowing users to view, add, edit, and delete products. The application uses MongoDB, Express, Node.js, and EJS for rendering dynamic content.",
+
+    github: "https://github.com/gauravsharma2003/ShoePing-Ecommerce",
+    img: "/assets/images/projects/E-commerce.webp",
+    seoimg: "/assets/images/projects/E-commerce.webp",
+    link: "shoe-store",
+    showOnHome: true,
+    tech: [
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "EJS",
+      "Bootstrap",
+      "GSAP"
+    ],
+    desc: "A web application that showcases a collection of shoes, allowing users to view, add, edit, and delete products. The application uses MongoDB for data storage, Express and Node.js for the backend, and EJS for rendering dynamic content. Bootstrap and GSAP are used for responsive design and animations. This project demonstrates my full-stack development skills and ability to create interactive web applications.",
+  },
+  {
     title: "Weather App",
     miniDesc:
       "A web application that provides real-time weather information for any location. It uses a weather API to fetch data and displays it in a user-friendly interface.",
@@ -51,8 +72,7 @@ const projectData = [
       "CSS",
     ],
     desc: "A classic snake game developed using JavaScript, HTML, and CSS. The game features simple controls and an engaging gameplay experience. This project demonstrates my skills in game development and front-end technologies.",
-  },
-  
+  }
 ];
 
 export default projectData;
