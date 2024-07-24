@@ -5,6 +5,7 @@ import {
   SkillsSection,
   Animatify,
   SEO,
+  ExperienceSection, // Import ExperienceSection here
 } from "../../components";
 import Head from "next/head";
 
@@ -57,6 +58,11 @@ export default function About() {
         </div>
         <SubHeader title="Why hire me?" />
         <SkillsSection />
+        <SubHeader
+          title="My Experience"
+         
+        />
+        <ExperienceSection /> {/* Add the ExperienceSection here */}
       </Animatify>
     </div>
   );
