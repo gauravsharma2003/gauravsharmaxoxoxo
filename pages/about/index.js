@@ -60,7 +60,7 @@ export default function About() {
         <SkillsSection />
         <SubHeader
           title="My Experience"
-         
+          caption="I am a goddamn professional. So long I have done some internships, have worked for some clients, and have also contributed to OpenSource bootcamps, communities and programs that you can read more about below."
         />
         <ExperienceSection /> {/* Add the ExperienceSection here */}
       </Animatify>
