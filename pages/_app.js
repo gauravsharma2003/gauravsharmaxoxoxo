@@ -4,7 +4,7 @@ import { Header, Footer } from "../components";
 import { PageTransition } from "../components";
 import NextNProgress from "nextjs-progressbar";
 import { PageTransition as Transition } from "next-page-transitions";
-// import { Analytics } from "../components";
+import { Analytics } from "@vercel/analytics/react"
 
 function MyApp({ Component, pageProps }) {
   const setTheme = (theme) => {
@@ -40,6 +40,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div>
+    <Analytics/>
       <Transition timeout={500} classNames="page-transition">
         <div className="h-fit w-full relative z-10">
           <PageTransition />
