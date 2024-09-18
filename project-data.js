@@ -20,6 +20,25 @@ const projectData = [
     desc: "A web application that showcases a collection of shoes, allowing users to view, add, edit, and delete products. The application uses MongoDB for data storage, Express and Node.js for the backend, and EJS for rendering dynamic content. Bootstrap and GSAP are used for responsive design and animations. This project demonstrates my full-stack development skills and ability to create interactive web applications."
   },
   {
+    title: "Geet-Ify",
+    miniDesc: "A mobile music application built with React Native and Flask API, featuring song suggestions, playback controls, and a sleek user interface.",
+    github: "https://github.com/gauravsharma2003/G-spotify",
+    img: "/assets/images/projects/Geet-Ify.webp",
+    seoimg: "/assets/images/projects/Geet-Ify.webp",
+    link: "shoe-store",
+    showOnHome: true,
+    tech: [
+      "React Native",
+      "TypeScript",
+      "Flask API",
+      "NativeWind",
+      "JSX",
+      "TSX",
+      "Python"
+    ],
+    "desc": "Geet-Ify is a sophisticated mobile music application developed using React Native and Flask API. It showcases my skills in reverse engineering and full-stack mobile development. The app features a user-friendly interface with a dropdown for song suggestions, enabling users to discover new music easily. Key functionalities include play and pause controls for seamless music playback. The frontend is built with React Native, utilizing JSX and TSX for component creation, while NativeWind ensures a responsive and attractive design. The backend is powered by a Flask API, demonstrating my proficiency in Python and RESTful service development."
+  },
+  {
     title: "SehatSutra AI (Healthcare Solution)",
     miniDesc:
       "AI-powered healthcare system with Aptos blockchain integration for secure payments and real-time diagnostics.",
@@ -47,7 +66,7 @@ const projectData = [
     img: "/assets/images/projects/news-app.webp",
     seoimg: "/assets/images/seo/news-app.webp",
     link: "news-app",
-    showOnHome: true,
+    showOnHome: false,
     tech: [
       "JavaScript",
       "HTML",
