@@ -5,6 +5,7 @@ import HomeHeroSection from "../components/HomeHeroSection";
 import SubHeader from "../components/SubHeader";
 import ProjectCards from "../components/ProjectCards";
 import SkillsSection from "../components/SkillsSection";
+import ExperienceSection from "../components/ExperienceSection";
 import projectData from "../project-data";
 
 const Home = () => {
@@ -15,12 +16,12 @@ const Home = () => {
         <meta
           name="description"
           content="I am a very nice and humble front-end developer. I can design a website, develop it using ReactJS, and deploy it on Vercel. Well that’s what I did for this website, if you want to know more, keep scrolling."
-           img="public/assets/images/seo/about.webp"
-            />
+          img="public/assets/images/seo/about.webp"
+        />
         {/* Other meta tags */}
       </Head>
       <HomeHeroSection />
-      
+
       <SubHeader
         title="Featured Projects"
         caption="Take a look at these projects I made. Most of them are available on Github so go ahead knock yourself out."
@@ -42,6 +43,8 @@ const Home = () => {
           </a>
         </Link>
       </span>
+      <SubHeader title="Experience" />
+      <ExperienceSection />
       <SubHeader title="Why hire me?" />
       <SkillsSection />
       <span className="relative z-10 block px-10 mx-auto my-16 text-xl text-center text-lightTextColor dark:text-white md:px-32">

@@ -16,9 +16,13 @@ export default function ExperienceSection() {
                     touchTracking
                     disableButtonsControls
                     swipeExtraPadding={2000}
+                    renderDotsItem={({ isActive }) => (
+                        <div className={`mx-1 h-2 w-2 rounded-full transition-all ${isActive ? 'bg-lightTextColor dark:bg-white w-4' : 'bg-gray-400 dark:bg-gray-600'
+                            }`} />
+                    )}
                 >
                     {experienceData.map((experience, index) => (
-                        <Experience {...experience} key={`experience-${index}`}/>
+                        <Experience {...experience} key={`experience-${index}`} />
                     ))}
                 </AliceCarousel>
             </div>
@@ -26,27 +30,29 @@ export default function ExperienceSection() {
     );
 }
 
-function Experience({icon, date, organization, position, desc, website}) {
+function Experience({ icon, date, organization, position, desc, website }) {
     return (
-        <div className="flex flex-col gap-4 px-10 md:pl-0 md:pr-12 select-none cursor-grab active:cursor-grabbing w-full md:w-[45rem]">
-            <div className="flex flex-col md:flex-row gap-4">
-                <img src={icon} className="h-24 w-24 rounded-lg select-none drag" alt={organization + " logo"}/>
-                <div className="flex flex-col">
-                    <span className="text-5xl text-lightTextColor dark:text-white">{organization}</span>
-                    <span className="text-5xl text-border md:whitespace-nowrap">{position}</span>
+        <div className="flex flex-col gap-4 px-10 md:pl-0 mr-12 select-none cursor-grab active:cursor-grabbing w-full md:w-[45rem] min-h-[35rem] justify-between pb-16">
+            <div className="flex flex-col gap-4 flex-1">
+                <div className="flex flex-col md:flex-row gap-4">
+                    <img src={icon} className="h-24 w-24 rounded-lg select-none object-contain" alt={organization + " logo"} />
+                    <div className="flex flex-col">
+                        <span className="text-5xl text-lightTextColor dark:text-white">{organization}</span>
+                        <span className="text-5xl text-border break-words">{position}</span>
+                    </div>
+                </div>
+                <div className={"flex flex-col gap-2"}>
+                    <div className="text-xl text-lightTextColor dark:text-white">{date}</div>
+                    <div className="text-xl text-lightTextColor dark:text-white whitespace-pre-line">{desc}</div>
                 </div>
             </div>
-            <div className={"flex flex-col gap-2"}>
-                <div className="text-xl text-lightTextColor dark:text-white">{date}</div>
-                <div className="text-xl text-lightTextColor dark:text-white whitespace-pre-line">{desc}</div>
-            </div>
             <Link href={website}>
-            <a
-                target="_blank"
-                className={`inline-block w-full md:w-fit text-center md:text-left md:mr-4 px-8 py-2 text-xl border-lightTextColor dark:border-white border-2 bg-lightTextColor dark:bg-white text-white dark:text-bgColor rounded-xl transition shadow-none`}
-            >
-                Website
-            </a>
+                <a
+                    target="_blank"
+                    className={`inline-block w-full md:w-fit text-center md:text-left md:mr-4 px-8 py-2 text-xl border-lightTextColor dark:border-white border-2 bg-lightTextColor dark:bg-white text-white dark:text-bgColor rounded-xl transition shadow-none mt-4`}
+                >
+                    Website
+                </a>
             </Link>
         </div>
     )
