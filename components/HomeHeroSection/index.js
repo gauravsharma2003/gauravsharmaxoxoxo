@@ -13,7 +13,7 @@ export default function HomeHeroSection() {
   useEffect(() => {
     try {
       canvas = null;
-    } catch (e) {}
+    } catch (e) { }
   }, []);
 
   return (
@@ -46,18 +46,19 @@ export default function HomeHeroSection() {
               </span>
             </span>
             <span className="md:leading-[9rem] mb-6 block text-[13vw] sm:text-[7rem] text-lightTextColor dark:text-white md:text-center font-secondary max-w-[100vw] md:max-w-[80rem]">
-              Building Websites, Products, Interfaces & Experiences
+              Building Products, Experiences & Scalable Systems
             </span>
             <span className="md:m-auto block text-lightTextColor dark:text-white text-2xl md:text-xl leading-10 md:text-center max-w-xl my-4">
-              I am a{" "}
+              I work at the intersection of{" "}
               <span
-                title="Still not a link."
+                title="Not a link."
                 className="pointer-events-auto cursor-pointer text-pink dark:text-blue"
               >
-                Web Developer
-              </span>{" "}
-              by profession, and learner by passion.
+                product, technology, and execution
+              </span>
+              , focused on building user-first products.
             </span>
+
             <div className="flex justify-center items-center gap-6 mt-8">
               <a
                 className="text-lightTextColor dark:text-white text-4xl md:text-2xl w-fit inline pointer-events-auto"

@@ -13,42 +13,47 @@ export default function SkillsSection() {
       <div className="max-w-screen-xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-12">
         <div className="flex justify-center flex-col gap-6">
           <div className="text-xl text-lightTextColor dark:text-white leading-8">
-            Here's a list of all my skills and all the reasons why you should hire me. As a developer, I don't completely know anything, you see I am not very good at memorizing, I normally read documentations every time I am building something, but I make sure to get the work done in time.
+            I work at the intersection of product, technology, and execution. My focus is on building user-centric products and driving measurable business outcomes through structured problem solving.
           </div>
           <div className="text-sm text-lightTextColor dark:text-white mt-2 md:mt-0">
-            Claims are based on my experience and projects
+            Skills backed by real-world product ownership and shipped features
           </div>
+
         </div>
         <div className="h-full w-full bg-lightBgSecondaryColor dark:bg-bgSecondaryColor rounded-xl overflow-hidden pb-6">
           <AliceCarousel
-              infinite
-              autoWidth
-              autoHeight
-              mouseTracking
-              ssrSilentMode
-              touchTracking
-              disableButtonsControls
+            infinite
+            autoWidth
+            autoHeight
+            mouseTracking
+            ssrSilentMode
+            touchTracking
+            disableButtonsControls
           >
             <Skill
-              logo={<BsCodeSlash />}
-              title="Web Development"
-              desc="Proficient in HTML, CSS, JavaScript, and experienced with libraries and frameworks such as React.js, Node.js, Express.js, and Tailwind CSS. Developed dynamic applications like weather and news apps using APIs."
-            />
-            <Skill
               logo={<VscSymbolInterface />}
-              title="UI/UX"
-              desc="Designed and developed user-friendly interfaces with a focus on responsiveness and usability. Tools used include Figma and Adobe XD and i love using Canva."
+              title="Product Management"
+              desc="Experience in user research, PRDs, funnel analysis, retention strategy, and roadmap prioritization. Owned end-to-end features from ideation to launch across content, games, and personalization surfaces."
             />
+
             <Skill
               logo={<GiRobotGolem />}
-              title="Programming"
-              desc="Experienced in programming languages such as C, C++, and Java. Participated in Hackathons and coding competitions on college level."
+              title="Data & Experimentation"
+              desc="Worked extensively with GA4, Microsoft Clarity, cohort analysis, and funnel diagnostics to identify drop-offs, validate hypotheses, and guide product decisions through experimentation."
             />
+
+            <Skill
+              logo={<BsCodeSlash />}
+              title="Product Engineering"
+              desc="Hands-on with JavaScript/TypeScript, React, REST APIs, and SQL. Built and shipped full-stack products and internal tools, enabling better collaboration with engineering teams."
+            />
+
             <Skill
               logo={<GoTools />}
-              title="Other Tools and Technologies"
-              desc="Familiar with Git, GitHub, VS Code, RESTful APIs, and development tools like Docker. Experienced in using cloud services such as AWS and Google Cloud Platform."
+              title="Tools & Execution"
+              desc="Comfortable working with Jira, Figma, Metabase, Git/GitHub, and analytics dashboards. Strong at cross-functional coordination, stakeholder alignment, and execution under tight timelines."
             />
+
           </AliceCarousel>
         </div>
       </div>

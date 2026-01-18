@@ -13,7 +13,7 @@ export default function About() {
     <div className="w-full pt-4 h-fit">
       <SEO
         title="About / Gaurav Sharma"
-        desc="A Full Stack Developer based in India. I enjoy designing and developing websites. I am currently pursuing B. Tech in Information Technology from Guru Gobind Singh Indraprastha University."
+        desc="A product-focused professional based in India, working at the intersection of product strategy, data, and execution. Currently pursuing B.Tech in Information Technology from Guru Gobind Singh Indraprastha University."
         img="public/assets/images/seo/about.webp"
       />
       <Animatify>
@@ -32,12 +32,14 @@ export default function About() {
                   Gaurav Sharma
                 </h1>
                 <span className="block mt-8 text-xl leading-10 text-lightTextColor dark:text-white">
-                  A Full Stack Developer based in India. I enjoy designing and
-                  developing websites. I am currently{" "}
-                  {new Date().getFullYear() - 2003} years old, and am pursuing a
-                  B. Tech in Information Technology from Guru Gobind Singh
-                  Indraprastha University.
+                  I am a product-focused professional based in India, working at the intersection
+                  of product strategy, technology, and execution. I currently work on building
+                  user-centric products with a strong emphasis on retention, personalization,
+                  and scalable systems. I am {new Date().getFullYear() - 2003} years old and am
+                  pursuing a B.Tech in Information Technology from Guru Gobind Singh Indraprastha
+                  University.
                 </span>
+
                 <Link href="/resume">
                   <a
                     className={`inline-block mt-8 w-full md:w-fit text-center md:text-left md:mr-4 px-8 py-2 text-xl border-lightTextColor dark:border-white border-2 bg-lightTextColor dark:bg-white text-white dark:text-bgColor rounded-xl transition shadow-none hover:shadow-xl hover:scale-105`}
