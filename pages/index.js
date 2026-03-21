@@ -21,6 +21,8 @@ const Home = () => {
         {/* Other meta tags */}
       </Head>
       <HomeHeroSection />
+      <SubHeader title="Experience" />
+      <ExperienceSection />
 
       <SubHeader
         title="Featured Projects"
@@ -43,8 +45,6 @@ const Home = () => {
           </a>
         </Link>
       </span>
-      <SubHeader title="Experience" />
-      <ExperienceSection />
       <SubHeader title="Why hire me?" />
       <SkillsSection />
       <span className="relative z-10 block px-10 mx-auto my-16 text-xl text-center text-lightTextColor dark:text-white md:px-32">

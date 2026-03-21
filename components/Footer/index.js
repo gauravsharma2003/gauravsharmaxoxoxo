@@ -5,6 +5,7 @@ import {
   FiLinkedin,
   FiMail,
 } from "react-icons/fi";
+import { SiSubstack } from "react-icons/si";
 import { Animatify } from "../";
 
 export default function Footer() {
@@ -44,7 +45,7 @@ export default function Footer() {
                   </a>
                 </Link>
                 <a
-                  className="text-lightTextColor dark:text-white text-3xl w-fit inline "
+                  className="text-lightTextColor dark:text-white text-2xl w-fit inline "
                   href="https://github.com/gauravsharma2003"
                   target="_blank"
                   rel="noreferrer"
@@ -67,6 +68,7 @@ export default function Footer() {
                 >
                   <FiTwitter />
                 </a>
+           
                 <a
                   className="text-lightTextColor dark:text-white text-3xl w-fit inline "
                   href="mailto:sharmagauravxo@gmail.com"
@@ -74,6 +76,14 @@ export default function Footer() {
                   rel="noreferrer"
                 >
                   <FiMail />
+                </a>
+                <a
+                  className="text-lightTextColor dark:text-white text-2xl w-fit inline "
+                  href="https://substack.com/@gauravxo"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <SiSubstack />
                 </a>
               </div>
             </div>
