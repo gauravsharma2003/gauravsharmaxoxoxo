@@ -37,7 +37,7 @@ export default function Page({ project, randomProject }) {
       <SEO
         title={`${project.title} / Projects / Gaurav`}
         desc={`${project.miniDesc} / Projects / Gaurav`}
-        img={`https://jaagrav-2.vercel.app${project.seoimg}`}
+        img={`https://gauravsharmaxoxoxo.vercel.app${project.seoimg}`}
       />
       <Animatify>
         <SubHeader
