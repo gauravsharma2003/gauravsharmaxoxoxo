@@ -165,8 +165,10 @@ export default function Page({ project, randomProject }) {
 
 export async function getStaticPaths(context) {
   return {
-    paths: [], //indicates that no page needs be created at build time
-    fallback: "blocking", //indicates the type of fallback
+    paths: [...new Set(projectData.map((project) => project.link))].map(
+      (projectLink) => ({ params: { projectLink } })
+    ), //builds every project page at build time
+    fallback: false, //no page is created on demand
   };
 }
 

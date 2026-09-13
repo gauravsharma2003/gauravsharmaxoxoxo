@@ -29,3 +29,6 @@ dist-ssr
 
 # Yarn
 yarn.lock
+
+# Static export
+out
