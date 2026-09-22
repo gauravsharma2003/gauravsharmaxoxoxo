@@ -46,7 +46,7 @@ export default function HomeHeroSection() {
               </span>
             </span>
             <h1 className="md:leading-[9rem] mb-6 block text-[13vw] sm:text-[7rem] text-lightTextColor dark:text-white md:text-center font-secondary max-w-[100vw] md:max-w-[80rem]">
-              Product Manager Building Products, Experiences & Scalable Systems
+              Building Products, Experiences & Scalable Systems
             </h1>
             <span className="md:m-auto block text-lightTextColor dark:text-white text-2xl md:text-xl leading-10 md:text-center max-w-xl my-4">
               I work at the intersection of{" "}
