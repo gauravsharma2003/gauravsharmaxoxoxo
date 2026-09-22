@@ -6,7 +6,7 @@ const projectData = [
     github: "https://github.com/gauravsharma2003/ShoePing-Ecommerce",
     img: "/assets/images/projects/E-commerce.webp",
     seoimg: "/assets/images/projects/E-commerce.webp",
-    link: "shoe-store",
+    link: "geet-ify",
     showOnHome: true,
     tech: [
       "JavaScript",

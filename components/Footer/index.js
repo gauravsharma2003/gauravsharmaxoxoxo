@@ -44,6 +44,9 @@ export default function Footer() {
                     Contact
                   </a>
                 </Link>
+                <Link href="/case-studies">
+                  <a className="text-lightTextColor dark:text-white text-lg hover:underline underline-offset-8">Case Studies</a>
+                </Link>
                 <a
                   className="text-lightTextColor dark:text-white text-2xl w-fit inline "
                   href="https://github.com/gauravsharma2003"
