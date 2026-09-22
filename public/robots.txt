@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gauravsharmaxoxoxo.vercel.app/sitemap.xml
+Sitemap: https://gauravsharma.cc/sitemap.xml

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 export default function SEO({ title, desc, img }) {
   const router = useRouter();
-  const siteUrl = "https://gauravsharmaxoxoxo.vercel.app";
+  const siteUrl = "https://gauravsharma.cc";
   const path = (router.asPath || "/").split("?")[0];
   const canonicalUrl = `${siteUrl}${path === "/" ? "" : path}`;
   const imageUrl = img
