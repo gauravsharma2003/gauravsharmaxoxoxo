@@ -1,6 +1,5 @@
-import { SubHeader, ProjectCards, Animatify, SEO, BlogSection } from "../../components";
+import { SubHeader, ProjectCards, Animatify, SEO } from "../../components";
 import projectData from "../../project-data";
-import Head from "next/head";
 import Link from "next/link";
 
 export default function Projects() {
@@ -9,7 +8,7 @@ export default function Projects() {
       <SEO
         title="Projects / Gaurav Sharma"
         desc="Take a look at these projects I made in the name of Software Development. I am quite proud of how most of them turned out. Most of them are available on GitHub, so feel free to check them out!"
-        img="public/assets/images/seo/about.webp"
+        img="/assets/images/seo/about.webp"
       />
       <SubHeader
         title="My Projects"
@@ -35,7 +34,6 @@ export default function Projects() {
           </Link>
         </span>
       </Animatify>
-      {/* <BlogSection /> */}
     </div>
   );
 }

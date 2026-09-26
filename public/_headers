@@ -1,0 +1,22 @@
+# Asset URLs are content-versioned by Next.js or asset-url.js.
+# Keep HTML, robots.txt, and sitemap.xml revalidating so updates stay visible.
+/_next/static/*
+  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+
+/_next/data/*
+  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+
+/assets/images/*
+  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+
+/assets/fonts/*
+  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+
+/assets/lib/*
+  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+
+/assets/resume/*
+  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+
+/favicon.ico
+  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable

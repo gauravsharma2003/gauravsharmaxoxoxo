@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/generate-asset-versions.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/generate-asset-versions.mjs",
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"

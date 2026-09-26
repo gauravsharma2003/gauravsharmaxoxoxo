@@ -1,7 +1,9 @@
+import assetUrl from "./asset-url";
+
 var experienceData = [
 
     {
-    icon: "/assets/images/times-internet-logo.svg",
+    icon: assetUrl("/assets/images/times-internet-logo.svg"),
     date: "Consulting • September 2025 - Present",
     organization: "Times Internet",
     position: "Associate Product Consultant",
@@ -17,7 +19,7 @@ var experienceData = [
     website: "https://timesinternet.in"
   },
   {
-    icon: "/assets/images/times-internet-logo.svg",
+    icon: assetUrl("/assets/images/times-internet-logo.svg"),
     date: "Internship • July 2024 - September 2025",
     organization: "Times Internet",
     position: "Product Management Intern",

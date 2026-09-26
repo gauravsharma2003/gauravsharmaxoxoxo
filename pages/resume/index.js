@@ -1,5 +1,5 @@
 import { SubHeader, SEO } from "../../components";
-import Head from "next/head";
+import assetUrl from "../../asset-url";
 
 export default function Resume() {
   return (
@@ -16,7 +16,9 @@ export default function Resume() {
       <div className="px-10 md:px-32 relative z-10">
         <div className="max-w-screen-xl mx-auto">
           <iframe
-            src="/assets/resume/Gaurav.pdf"
+            src={assetUrl("/assets/resume/Gaurav.pdf")}
+            title="Gaurav Sharma resume"
+            loading="lazy"
             className="h-[90vh] w-full rounded-xl"
           ></iframe>
         </div>

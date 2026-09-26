@@ -1,12 +1,14 @@
+import assetUrl from "./asset-url";
+
 const projectData = [
   {
     title: "Shoe-ping (E-Commerce)",
     miniDesc:
       "A web application that showcases a collection of shoes, allowing users to view, add, edit, and delete products. The application uses MongoDB, Express, Node.js, and EJS for rendering dynamic content.",
     github: "https://github.com/gauravsharma2003/ShoePing-Ecommerce",
-    img: "/assets/images/projects/E-commerce.webp",
+    img: assetUrl("/assets/images/projects/E-commerce.webp"),
     seoimg: "/assets/images/projects/E-commerce.webp",
-    link: "geet-ify",
+    link: "shoe-store",
     showOnHome: true,
     tech: [
       "JavaScript",
@@ -23,9 +25,9 @@ const projectData = [
     title: "Geet-Ify",
     miniDesc: "A mobile music application built with React Native and Flask API, featuring song suggestions, playback controls, and a sleek user interface.",
     github: "https://github.com/gauravsharma2003/G-spotify",
-    img: "/assets/images/projects/Geet-Ify.webp",
+    img: assetUrl("/assets/images/projects/Geet-Ify.webp"),
     seoimg: "/assets/images/projects/Geet-Ify.webp",
-    link: "shoe-store",
+    link: "geet-ify",
     showOnHome: true,
     tech: [
       "React Native",
@@ -43,8 +45,8 @@ const projectData = [
     miniDesc:
       "AI-powered healthcare system with Aptos blockchain integration for secure payments and real-time diagnostics.",
     github: "https://github.com/gauravsharma2003/SehatSutraAI",
-    img: "/assets/images/projects/sehatsutraAi.webp",
-    seoimg: "/assets/images/seo/sehatsutraAi.webp",
+    img: assetUrl("/assets/images/projects/sehatsutraAi.webp"),
+    seoimg: "/assets/images/projects/sehatsutraAi.webp",
     link: "sehat-sutra-ai",
     showOnHome: true,
     tech: [
@@ -63,8 +65,8 @@ const projectData = [
     miniDesc:
       "A news application that fetches and displays the latest news articles from various sources. The app uses a news API and presents the information in an organized manner.",
     github: "https://github.com/gauravsharma2003/My-news-app",
-    img: "/assets/images/projects/news-app.webp",
-    seoimg: "/assets/images/seo/news-app.webp",
+    img: assetUrl("/assets/images/projects/news-app.webp"),
+    seoimg: "/assets/images/projects/news-app.webp",
     link: "news-app",
     showOnHome: false,
     tech: [
@@ -81,8 +83,8 @@ const projectData = [
       "A web application that provides real-time weather information for any location. It uses a weather API to fetch data and displays it in a user-friendly interface.",
     website: "https://gauravsharma2003.github.io/My-Weather/",
     github: "https://github.com/gauravsharma2003/My-Weather",
-    img: "/assets/images/projects/weather-app.webp",
-    seoimg: "/assets/images/seo/weather-app.webp",
+    img: assetUrl("/assets/images/projects/weather-app.webp"),
+    seoimg: "/assets/images/projects/weather-app.webp",
     link: "weather-app",
     showOnHome: false,
     tech: [
@@ -98,8 +100,8 @@ const projectData = [
     miniDesc:
       "A classic snake game developed using JavaScript, HTML, and CSS. The game features simple controls and an engaging gameplay experience.",
     github: "https://github.com/gauravsharma2003/Snake-game",
-    img: "/assets/images/projects/snake-game.webp",
-    seoimg: "/assets/images/seo/snake-game.webp",
+    img: assetUrl("/assets/images/projects/snake-game.webp"),
+    seoimg: "/assets/images/projects/snake-game.webp",
     link: "snake-game",
     showOnHome: false,
     tech: [

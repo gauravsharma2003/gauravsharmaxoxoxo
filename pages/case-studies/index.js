@@ -1,34 +1,75 @@
 import Link from "next/link";
-import { SEO, SubHeader } from "../../components";
+import SEO from "../../components/SEO";
 import caseStudies from "../../case-study-data";
 
 export default function CaseStudies() {
+  const [featured, ...others] = caseStudies;
   return (
-    <div className="h-fit w-full">
+    <div className="h-fit w-full px-10 md:px-32 pb-24">
       <SEO
         title="Product Management Case Studies | Gaurav Sharma"
         desc="Product management case studies by Gaurav Sharma covering consumer app retention, news personalisation, TOI App product strategy, funnel optimisation, and cross-functional execution."
         img="/assets/images/seo/gaurav.webp"
       />
-      <SubHeader
-        title="Product Case Studies"
-        caption="Selected product work across consumer app retention, funnel optimisation, news personalisation, and cross-functional execution."
-      />
-      <main className="px-10 pb-16 md:px-32">
-        <div className="grid max-w-screen-xl grid-cols-1 gap-6 mx-auto md:grid-cols-2">
-          {caseStudies.map((study) => (
-            <article key={study.slug} className="p-8 border-2 rounded-xl border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor">
-              <p className="text-lg text-pink">{study.role}</p>
-              <h2 className="mt-3 text-3xl text-lightTextColor dark:text-white">{study.title}</h2>
-              <p className="mt-4 text-xl leading-8 text-lightTextColor dark:text-white">{study.summary}</p>
-              <p className="mt-5 text-lg leading-7 text-lightTextColor dark:text-white"><strong>Outcome:</strong> {study.outcome}</p>
-              <Link href={`/case-studies/${study.slug}`}>
-                <a className="inline-block mt-6 text-lg text-indigo hover:underline underline-offset-8">Read case study</a>
-              </Link>
+      <div className="max-w-screen-xl mx-auto pt-12 md:pt-20">
+        <p className="text-xs md:text-sm tracking-[0.22em] uppercase text-pink">Selected work / Times Internet</p>
+        <h1 className="mt-6 max-w-4xl font-secondary text-5xl md:text-7xl leading-[1.08] tracking-tight text-lightTextColor dark:text-white">
+          Product decisions, measured in outcomes.
+        </h1>
+        <p className="mt-7 max-w-2xl text-xl md:text-2xl leading-9 text-lightTextColor dark:text-white opacity-80">
+          Five views into my work on consumer news products: where users dropped off, what teams changed, and what the results showed.
+        </p>
+
+        <article className="relative mt-16 md:mt-24 border-t-2 border-lightTextColor dark:border-white pt-7 md:pt-10 grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(16rem,0.45fr)]">
+          <div>
+            <p className="text-sm tracking-widest uppercase text-pink">01 / Featured case study</p>
+            <h2 className="mt-5 max-w-3xl font-secondary text-4xl md:text-6xl leading-tight text-lightTextColor dark:text-white">{featured.title}</h2>
+            <p className="mt-5 max-w-2xl text-xl leading-9 text-lightTextColor dark:text-white">{featured.summary}</p>
+            <Link href={`/case-studies/${featured.slug}`}>
+              <a className="inline-block mt-8 border-b-2 border-pink pb-1 text-lg text-lightTextColor dark:text-white transition hover:text-pink focus-visible:text-pink">Explore the case study <span aria-hidden="true">↗</span></a>
+            </Link>
+          </div>
+          <div className="md:border-l md:border-lightBgSecondaryColorTranslucent dark:md:border-bgSecondaryColor md:pl-10 flex flex-col justify-end">
+            <p className="text-xs uppercase tracking-[0.2em] text-pink">The measured shift</p>
+            <p className="mt-3 font-secondary text-5xl md:text-6xl leading-none tracking-tight text-pink tabular-nums">{featured.metric}</p>
+            <p className="mt-3 text-base md:text-lg text-lightTextColor dark:text-white">{featured.metricLabel}</p>
+            <div className="mt-8 space-y-4" role="img" aria-label="Games funnel progression increased from 18 percent to 74 percent">
+              <div>
+                <div className="flex justify-between text-sm text-lightTextColor dark:text-white"><span>Before</span><span className="tabular-nums">18%</span></div>
+                <div className="mt-2 h-2 bg-lightBgSecondaryColor dark:bg-bgSecondaryColor"><div className="h-full w-[18%] bg-lightTextColor dark:bg-white" /></div>
+              </div>
+              <div>
+                <div className="flex justify-between text-sm text-lightTextColor dark:text-white"><span>After</span><span className="tabular-nums">74%</span></div>
+                <div className="mt-2 h-2 bg-lightBgSecondaryColor dark:bg-bgSecondaryColor"><div className="h-full w-[74%] bg-pink" /></div>
+              </div>
+            </div>
+            <p className="mt-8 pt-5 border-t border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor text-sm leading-6 text-lightTextColor dark:text-white opacity-70">{featured.role}</p>
+          </div>
+        </article>
+
+        <div className="mt-20 md:mt-28">
+          <div className="flex items-end justify-between gap-6 pb-5 border-b border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor">
+            <h2 className="font-secondary text-3xl md:text-4xl text-lightTextColor dark:text-white">More product work</h2>
+            <span className="text-sm tracking-widest text-lightTextColor dark:text-white opacity-60">02 — 05</span>
+          </div>
+          {others.map((study, index) => (
+            <article key={study.slug} className="group grid gap-3 md:grid-cols-[3rem_minmax(0,1fr)_minmax(13rem,0.45fr)_2rem] md:gap-6 py-7 md:py-9 border-b border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor">
+              <span className="text-sm text-pink tabular-nums">0{index + 2}</span>
+              <div>
+                <h3 className="font-secondary text-2xl md:text-3xl leading-tight text-lightTextColor dark:text-white">
+                  <Link href={`/case-studies/${study.slug}`}><a className="hover:text-pink focus-visible:text-pink transition">{study.title}</a></Link>
+                </h3>
+                <p className="mt-3 max-w-2xl text-lg leading-7 text-lightTextColor dark:text-white opacity-80">{study.summary}</p>
+              </div>
+              <div className="md:text-right">
+                <p className="text-sm tracking-wide text-lightTextColor dark:text-white opacity-70">{study.category}</p>
+                {study.metric && <p className="mt-3 text-2xl font-secondary text-pink tabular-nums">{study.metric}</p>}
+              </div>
+              <Link href={`/case-studies/${study.slug}`}><a aria-label={`Read ${study.title}`} className="hidden md:block text-2xl text-lightTextColor dark:text-white transition group-hover:translate-x-1 group-hover:text-pink">↗</a></Link>
             </article>
           ))}
         </div>
-      </main>
+      </div>
     </div>
   );
 }

@@ -1,53 +1,28 @@
-import { useEffect, useState } from "react";
 import { SubHeader, ProjectCards, Animatify, SEO } from "../../../components";
 import projectData from "../../../project-data";
-import Head from "next/head";
 import Link from "next/link";
-import ReadMoreReact from "read-more-react";
-
-import { Octokit } from "@octokit/core";
-import commaNumber from "comma-number";
 
 import { FiExternalLink } from "react-icons/fi";
 
 export default function Page({ project, randomProject }) {
-  const octokit = new Octokit({ auth: process.env.GITHUB_ACCESS_TOKEN });
-  const [stars, setStars] = useState(0),
-    [forks, setForks] = useState(0);
-
-  useEffect(() => {
-    const getGithubData = async () => {
-      try {
-        const githubRepoData = await octokit.request(
-          "GET /repos/{username}/{repo}",
-          {
-            username: "gauravsharma2003",
-            repo: project.link,
-          }
-        );
-
-        setStars(githubRepoData.data.stargazers_count);
-        setForks(githubRepoData.data.forks_count);
-      } catch (error) {}
-    };
-    getGithubData();
-  }, []);
   return (
     <div className="h-fit w-full">
       <SEO
         title={`${project.title} / Projects / Gaurav`}
         desc={`${project.miniDesc} / Projects / Gaurav`}
-        img={`https://gauravsharma.cc${project.seoimg}`}
+        img={project.seoimg}
       />
       <Animatify>
         <SubHeader
           title={project.title}
-          // caption={project.miniDesc}
+          caption={project.miniDesc}
         />
         <div className="px-10 md:px-32">
           <div className="relative z-10 max-w-screen-xl mx-auto">
             <img
               src={project.img}
+              alt={`${project.title} project preview`}
+              decoding="async"
               className="w-full rounded-xl transition duration-300 hover:scale-105 shadow-2xl"
             />
           </div>
@@ -56,40 +31,11 @@ export default function Page({ project, randomProject }) {
           <div className="relative z-20 max-w-screen-xl mx-auto">
             <div className="grid md:grid-cols-[1fr_2px_0.6fr] mt-12">
               <div className="py-12 md:pr-12">
-                <div className="text-xl leading-10 text-lightTextColor dark:text-white">
-                  <ReadMoreReact
-                    text={project.desc}
-                    min={100}
-                    ideal={350}
-                    max={1000}
-                    readMoreText="Click here to read more"
-                  />
-                </div>
+                <p className="text-xl leading-9 text-lightTextColor dark:text-white">{project.desc}</p>
               </div>
               <div className="h-full w-full bg-lightBgSecondaryColorTranslucent dark:bg-bgSecondaryColor"></div>
               <div className="py-12 md:pl-12">
                 <div className="h-fit sticky top-28">
-                  {!!stars && !!forks && (
-                    <div className="text-lightTextColor dark:text-white text-5xl mb-6">
-                      {!!stars && (
-                        <span>
-                          <b className="text-border">{commaNumber(stars)}</b>{" "}
-                          stars
-                        </span>
-                      )}
-                      {!!forks && (
-                        <span>
-                          {" "}
-                          and{" "}
-                          <b className="text-border">
-                            {commaNumber(forks)}
-                          </b>{" "}
-                          forks
-                        </span>
-                      )}{" "}
-                      on GitHub.
-                    </div>
-                  )}
                   <div className="text-lightTextColor dark:text-white text-2xl">
                     Technologies used:
                   </div>
@@ -147,6 +93,7 @@ export default function Page({ project, randomProject }) {
         </div>
         <SubHeader
           title="Next Project"
+          headingLevel={2}
           caption="This is not the only project I made, check out this other project that this page randomly chose for you to see, hope you'll like it. And if you don't go back to the projects page to see all the projects I have built so far."
         />
         <ProjectCards {...randomProject} />

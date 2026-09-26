@@ -1,6 +1,9 @@
 const caseStudies = [
   {
     slug: "toi-app-games-funnel-optimization",
+    category: "Engagement · Funnel design",
+    metric: "18% → 74%",
+    metricLabel: "Games funnel progression",
     title: "TOI App Games Funnel Optimization",
     metaTitle: "TOI App Games Funnel Optimization Case Study | Gaurav Sharma",
     metaDescription:
@@ -21,6 +24,9 @@ const caseStudies = [
   },
   {
     slug: "consumer-app-retention",
+    category: "Retention · Consumer apps",
+    metric: "+13%",
+    metricLabel: "Overall app retention",
     title: "Consumer App Retention Through Interactive Content",
     metaTitle: "Consumer App Retention Case Study | Gaurav Sharma",
     metaDescription:
@@ -41,6 +47,7 @@ const caseStudies = [
   },
   {
     slug: "toi-app-homepage-redesign",
+    category: "Discovery · Product design",
     title: "TOI App Homepage Redesign",
     metaTitle: "TOI App Homepage Redesign Case Study | Gaurav Sharma",
     metaDescription:
@@ -61,6 +68,7 @@ const caseStudies = [
   },
   {
     slug: "news-personalization-product-operations",
+    category: "Personalisation · ML operations",
     title: "News Personalization Product Operations",
     metaTitle: "News Personalization Product Case Study | Gaurav Sharma",
     metaDescription:
@@ -81,6 +89,7 @@ const caseStudies = [
   },
   {
     slug: "et-markets-toi-app-integration",
+    category: "Integration · Audience growth",
     title: "ET Markets Integration in the TOI App",
     metaTitle: "ET Markets Integration in TOI App Case Study | Gaurav Sharma",
     metaDescription:

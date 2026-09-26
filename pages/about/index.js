@@ -1,4 +1,5 @@
 import Link from "next/link";
+import assetUrl from "../../asset-url";
 import {
   GallerySection,
   SubHeader,
@@ -6,7 +7,6 @@ import {
   Animatify,
   SEO,
 } from "../../components";
-import Head from "next/head";
 
 export default function About() {
   return (
@@ -23,10 +23,7 @@ export default function About() {
               <h1 className="absolute text-border text-[6rem] md:text-[7rem] whitespace-nowrap opacity-10 -translate-y-1/2">
                 Gaurav Sharma
               </h1>
-              <img
-                className="absolute m-auto top-0 left-0 -translate-y-1/2 -translate-x-1/4 max-w-none w-[50rem] md:w-[75rem] dark:opacity-60"
-                src="/assets/images/blur-ball-blue.webp"
-              />
+              <div aria-hidden="true" className="ambient-glow absolute -top-20 -left-24 pointer-events-none" />
               <div className="relative z-10">
                 <h1 className="bottom-0 m-auto text-5xl text-lightTextColor dark:text-white">
                   Gaurav Sharma
@@ -51,13 +48,15 @@ export default function About() {
             </div>
             <div className="hidden md:block">
               <img
-                src="/assets/images/seo/gaurav.webp"
+                src={assetUrl("/assets/images/seo/gaurav.webp")}
+                alt="Portrait of Gaurav Sharma"
+                decoding="async"
                 className="w-full mx-auto shadow-2xl rounded-xl"
               />
             </div>
           </div>
         </div>
-        <SubHeader title="Why hire me?" />
+        <SubHeader title="Why hire me?" headingLevel={2} />
         <SkillsSection />
       </Animatify>
     </div>

@@ -2,6 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+.hero-background {
+  background-color: #fffaff;
+  background-image:
+    radial-gradient(ellipse 58% 50% at 57% 13%, rgba(206, 136, 255, 0.55), transparent 75%),
+    radial-gradient(ellipse 45% 45% at 17% 35%, rgba(255, 179, 213, 0.52), transparent 76%),
+    radial-gradient(ellipse 44% 48% at 75% 34%, rgba(127, 205, 247, 0.36), transparent 78%),
+    radial-gradient(ellipse 38% 38% at 45% 72%, rgba(214, 174, 252, 0.38), transparent 76%);
+}
+
+.dark .hero-background {
+  background-color: #151b28;
+  background-image:
+    radial-gradient(ellipse 53% 50% at 58% 4%, rgba(118, 9, 195, 0.87), transparent 78%),
+    radial-gradient(ellipse 48% 50% at 35% 40%, rgba(139, 41, 119, 0.57), transparent 78%),
+    radial-gradient(ellipse 43% 47% at 90% 38%, rgba(127, 52, 122, 0.42), transparent 77%),
+    radial-gradient(ellipse 43% 44% at 3% 54%, rgba(39, 67, 112, 0.5), transparent 80%);
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 50;
+  padding: 0.65rem 1rem;
+  background: #fff;
+  color: #151b28;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.ambient-glow {
+  width: min(65vw, 42rem);
+  height: min(65vw, 42rem);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(81, 59, 255, 0.13) 0%, rgba(81, 59, 255, 0.04) 40%, transparent 72%);
+}
+
+.dark .ambient-glow {
+  background: radial-gradient(circle, rgba(74, 124, 255, 0.17) 0%, rgba(74, 124, 255, 0.05) 42%, transparent 72%);
+}
+
+.experience-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #513bff transparent;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #513bff;
+  outline-offset: 4px;
+}
+
 :root {
   --background: #fff;
   --background-b: #f0f0f0;
@@ -18,21 +72,8 @@
   --text: #fff;
 }
 
-@font-face {
-  font-family: "TimeBurner";
-  src: url(/assets/fonts/TimeBurner.woff);
-}
-@font-face {
-  font-family: "Marcellus";
-  src: url(/assets/fonts/Marcellus.woff);
-}
-@font-face {
-  font-family: "Sulphur Point";
-  src: url(/assets/fonts/SulphurPoint-Bold.woff);
-}
-
 * {
-  font-family: "Sulphur Point", "TimeBurner", sans-serif;
+  font-family: "Sulphur Point", sans-serif;
   /* font-weight: bold; */
 }
 
@@ -175,4 +216,3 @@ li.alice-carousel__dots-item:not(.__custom).__active {
 .animated {
   transition: 0.25s ease-in-out;
 }
-

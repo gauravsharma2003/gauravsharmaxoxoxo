@@ -12,13 +12,8 @@ export default function Header({ changeTheme }) {
     [currentURL, setCurrentURL] = useState("");
 
   useEffect(() => {
-    window.addEventListener("scroll", (e) => {
-      if (window.scrollY > 30) {
-        setIsAtTop(false);
-      } else {
-        setIsAtTop(true);
-      }
-    });
+    const handleScroll = () => setIsAtTop(window.scrollY <= 30);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     const handleRouteChange = (url, { shallow }) => {
       setCurrentURL(url);
@@ -27,6 +22,7 @@ export default function Header({ changeTheme }) {
 
     router.events.on("routeChangeStart", handleRouteChange);
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       router.events.off("routeChangeStart", handleRouteChange);
     };
   }, []);
@@ -69,7 +65,7 @@ function DesktopHeader({ isAtTop, currentURL, changeTheme }) {
           >
             <Link href="/">GS</Link>
           </div>
-          <div className="h-full w-full max-w-lg lg:max-w-xl flex flex-row justify-between items-center m-auto">
+          <div className="h-full w-full max-w-2xl flex flex-row justify-between items-center m-auto gap-4">
             <DesktopNavLink
               href="/"
               name="Home"
@@ -78,6 +74,11 @@ function DesktopHeader({ isAtTop, currentURL, changeTheme }) {
             <DesktopNavLink
               href="/projects"
               name="Projects"
+              currentURL={currentURL}
+            />
+            <DesktopNavLink
+              href="/case-studies"
+              name="Case Studies"
               currentURL={currentURL}
             />
             
@@ -104,7 +105,7 @@ function DesktopHeader({ isAtTop, currentURL, changeTheme }) {
                 <FiSun />
               </div>
             </button>
-            <Link href="/resume">
+            <Link href="/resume" prefetch={false}>
               <a
                 className={`px-6 py-1 text-lightTextColor border-lightTextColor dark:text-white dark:border-white border-2 my-auto rounded-xl transition shadow-none hover:shadow-xl hover:scale-105`}
               >
@@ -120,7 +121,7 @@ function DesktopHeader({ isAtTop, currentURL, changeTheme }) {
 
 function DesktopNavLink({ href, name, currentURL, target }) {
   return (
-    <Link href={href}>
+    <Link href={href} prefetch={false}>
       <a
           target={target}
         className={`text-lg text-lightTextColor dark:text-white ${
@@ -135,10 +136,10 @@ function DesktopNavLink({ href, name, currentURL, target }) {
 
 function MobileNavLink({ href, name, currentURL, target = '_self' }) {
   return (
-    <Link href={href}>
+    <Link href={href} prefetch={false}>
       <a
           target={target}
-        className={`block text-7xl text-lightTextColor dark:text-white my-12 ${
+        className={`block text-4xl text-lightTextColor dark:text-white my-7 ${
           currentURL === href
             ? ""
             : `opacity-75 text-border`
@@ -192,7 +193,7 @@ function MobileHeader({ isAtTop, currentURL, changeTheme }) {
         </div>
       </div>
       <div
-        className={`transition fixed left-0 top-20 h-full w-full ${
+        className={`transition fixed left-0 top-20 h-[calc(100dvh-5rem)] w-full overflow-y-auto ${
           isOpen
             ? `backdrop-blur-lg bg-extraLightBgColorTranslucent dark:bg-extraDarkBgColorTranslucent`
             : "pointer-events-none"
@@ -215,6 +216,11 @@ function MobileHeader({ isAtTop, currentURL, changeTheme }) {
               name="Projects"
               currentURL={currentURL}
             />
+            <MobileNavLink
+              href="/case-studies"
+              name="Case Studies"
+              currentURL={currentURL}
+            />
             
             <MobileNavLink
               href="/about"
@@ -227,7 +233,7 @@ function MobileHeader({ isAtTop, currentURL, changeTheme }) {
               currentURL={currentURL}
             />
             <div className="mt-4 h-full w-full flex gap-12 items-center">
-              <Link href="/resume">
+              <Link href="/resume" prefetch={false}>
                 <a
                   className={`px-6 py-4 w-full text-lightTextColor border-lightTextColor dark:text-white text-5xl dark:border-white border-2 mr-auto my-auto rounded-xl`}
                 >

@@ -1,16 +1,18 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import assetUrl from "../../asset-url";
 
 export default function SEO({ title, desc, img }) {
   const router = useRouter();
   const siteUrl = "https://gauravsharma.cc";
   const path = (router.asPath || "/").split("?")[0];
   const canonicalUrl = `${siteUrl}${path === "/" ? "" : path}`;
-  const imageUrl = img
-    ? img.startsWith("http")
-      ? img
-      : `${siteUrl}/${img.replace(/^public\/?/, "").replace(/^\//, "")}`
-    : `${siteUrl}/assets/images/seo/gaurav.webp`;
+  const imagePath = img
+    ? `/${img.replace(/^public\/?/, "").replace(/^\//, "")}`
+    : "/assets/images/seo/gaurav.webp";
+  const imageUrl = img?.startsWith("http")
+    ? img
+    : `${siteUrl}${assetUrl(imagePath)}`;
   const description =
     desc ||
     "Gaurav Sharma is a product professional in India building user-focused digital products through product strategy, data, and execution.";

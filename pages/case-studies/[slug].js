@@ -1,36 +1,79 @@
 import Link from "next/link";
-import { SEO, SubHeader } from "../../components";
+import SEO from "../../components/SEO";
 import caseStudies from "../../case-study-data";
 
-export default function CaseStudy({ study }) {
+export default function CaseStudy({ study, nextStudy, number }) {
   return (
-    <div className="h-fit w-full">
+    <div className="h-fit w-full px-10 md:px-32 pb-24 text-lightTextColor dark:text-white">
       <SEO title={study.metaTitle} desc={study.metaDescription} img="/assets/images/seo/gaurav.webp" />
-      <SubHeader title={study.title} caption={study.summary} />
-      <main className="px-10 pb-16 md:px-32">
-        <article className="max-w-3xl mx-auto text-lightTextColor dark:text-white">
-          <p className="text-xl text-pink">{study.role}</p>
-          <section className="mt-10">
-            <h2 className="text-3xl">Outcome</h2>
-            <p className="mt-4 text-xl leading-9">{study.outcome}</p>
-          </section>
-          <section className="mt-10">
-            <h2 className="text-3xl">The challenge</h2>
-            <p className="mt-4 text-xl leading-9">{study.challenge}</p>
-          </section>
-          <section className="mt-10">
-            <h2 className="text-3xl">Approach</h2>
-            <ul className="mt-4 ml-6 space-y-3 text-xl leading-9 list-disc">
-              {study.approach.map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </section>
-          <section className="mt-10">
-            <h2 className="text-3xl">Product takeaway</h2>
-            <p className="mt-4 text-xl leading-9">{study.learnings}</p>
-          </section>
-          <Link href="/case-studies"><a className="inline-block mt-12 text-xl text-indigo hover:underline underline-offset-8">View all product case studies</a></Link>
-        </article>
-      </main>
+      <article className="max-w-screen-xl mx-auto">
+        <nav aria-label="Breadcrumb" className="pt-10 text-sm text-lightTextColor dark:text-white opacity-70">
+          <Link href="/"><a className="hover:underline">Home</a></Link>
+          <span className="mx-3" aria-hidden="true">/</span>
+          <Link href="/case-studies"><a className="hover:underline">Case studies</a></Link>
+          <span className="mx-3" aria-hidden="true">/</span>
+          <span>{study.title}</span>
+        </nav>
+
+        <header className="pt-16 md:pt-24 pb-14 md:pb-20 border-b-2 border-lightTextColor dark:border-white">
+          <p className="text-sm tracking-[0.2em] uppercase text-pink">Case study / 0{number} / {study.category}</p>
+          <h1 className="mt-6 max-w-5xl font-secondary text-5xl md:text-7xl leading-[1.08] tracking-tight">{study.title}</h1>
+          <p className="mt-7 max-w-3xl text-xl md:text-2xl leading-9 opacity-80">{study.summary}</p>
+        </header>
+
+        <div className="grid gap-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-20 pt-12 md:pt-16">
+          <aside className="text-sm leading-7 lg:sticky lg:top-24 lg:self-start">
+            <p className="text-pink uppercase tracking-widest">Role</p>
+            <p className="mt-2">{study.role}</p>
+            <p className="mt-8 text-pink uppercase tracking-widest">Focus</p>
+            <p className="mt-2">{study.category}</p>
+            <Link href="/case-studies"><a className="inline-block mt-9 border-b border-current hover:text-pink">All case studies ↗</a></Link>
+          </aside>
+
+          <div className="max-w-3xl">
+            <section aria-labelledby="outcome-heading" className="pb-12 md:pb-16 border-b border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor">
+              <p className="text-sm tracking-[0.2em] uppercase text-pink">The result</p>
+              {study.metric && <p className="font-secondary text-6xl md:text-8xl leading-none mt-6 text-pink tabular-nums">{study.metric}</p>}
+              <h2 id="outcome-heading" className="sr-only">Outcome</h2>
+              <p className="mt-5 font-secondary text-2xl md:text-3xl leading-snug">{study.outcome}</p>
+            </section>
+
+            <section aria-labelledby="challenge-heading" className="py-12 md:py-16 border-b border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor">
+              <p className="text-sm tracking-[0.2em] uppercase text-pink">01 / Context</p>
+              <h2 id="challenge-heading" className="mt-4 font-secondary text-3xl md:text-4xl">The challenge</h2>
+              <p className="mt-5 text-xl leading-9 opacity-85">{study.challenge}</p>
+            </section>
+
+            <section aria-labelledby="approach-heading" className="py-12 md:py-16 border-b border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor">
+              <p className="text-sm tracking-[0.2em] uppercase text-pink">02 / Execution</p>
+              <h2 id="approach-heading" className="mt-4 font-secondary text-3xl md:text-4xl">What I worked on</h2>
+              <ol className="mt-8">
+                {study.approach.map((item, index) => (
+                  <li key={item} className="grid grid-cols-[2.5rem_1fr] gap-3 py-5 border-t border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor">
+                    <span className="text-sm text-pink tabular-nums">0{index + 1}</span>
+                    <p className="text-xl leading-8">{item}</p>
+                  </li>
+                ))}
+              </ol>
+            </section>
+
+            <section aria-labelledby="takeaway-heading" className="py-12 md:py-16">
+              <p className="text-sm tracking-[0.2em] uppercase text-pink">03 / Reflection</p>
+              <h2 id="takeaway-heading" className="mt-4 font-secondary text-3xl md:text-4xl">What this reinforced</h2>
+              <p className="mt-5 text-xl leading-9 opacity-85">{study.learnings}</p>
+            </section>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t-2 border-lightTextColor dark:border-white">
+          <p className="text-sm tracking-[0.2em] uppercase text-pink">Next case study</p>
+          <Link href={`/case-studies/${nextStudy.slug}`}>
+            <a className="group inline-flex items-center gap-4 mt-5 font-secondary text-3xl md:text-5xl hover:text-pink transition">
+              {nextStudy.title}<span aria-hidden="true" className="transition group-hover:translate-x-2">↗</span>
+            </a>
+          </Link>
+        </div>
+      </article>
     </div>
   );
 }
@@ -40,5 +83,12 @@ export function getStaticPaths() {
 }
 
 export function getStaticProps({ params }) {
-  return { props: { study: caseStudies.find((study) => study.slug === params.slug) } };
+  const index = caseStudies.findIndex((study) => study.slug === params.slug);
+  return {
+    props: {
+      study: caseStudies[index],
+      nextStudy: caseStudies[(index + 1) % caseStudies.length],
+      number: index + 1,
+    },
+  };
 }

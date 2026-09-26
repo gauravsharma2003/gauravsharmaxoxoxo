@@ -24,10 +24,26 @@ SOFTWARE.
 
 
 var canvas;
-const startCanvas = () => {
-  if (!!canvas || !document.querySelector("#liquid-canvas")) return;
+var activeRun = 0;
+var listenerController;
+var listenerTimer;
 
-  canvas = document.querySelector("#liquid-canvas");
+const stopCanvas = () => {
+  activeRun++;
+  if (listenerTimer) clearTimeout(listenerTimer);
+  listenerController?.abort();
+  listenerController = null;
+  canvas = null;
+};
+
+const startCanvas = () => {
+  const nextCanvas = document.querySelector("#liquid-canvas");
+  if (!nextCanvas || canvas === nextCanvas) return;
+  stopCanvas();
+
+  canvas = nextCanvas;
+  const run = ++activeRun;
+  window.portfolioCanvasPaused = false;
   resizeCanvas();
 
   var config = {
@@ -835,6 +851,11 @@ const startCanvas = () => {
   update();
 
   function update() {
+    if (run !== activeRun || !canvas?.isConnected) return;
+    if (window.portfolioCanvasPaused || document.hidden) {
+      requestAnimationFrame(update);
+      return;
+    }
     var dt = calcDeltaTime();
     if (resizeCanvas()) {
       initFramebuffers();
@@ -1371,17 +1392,20 @@ const startCanvas = () => {
     }
     return hash;
   }
-  setTimeout(() => {
+  listenerController = new AbortController();
+  const listenerOptions = { signal: listenerController.signal };
+  listenerTimer = setTimeout(() => {
+    if (run !== activeRun) return;
     window.addEventListener("mousemove", function (e) {
       var pointer = pointers[0];
       var posX = scaleByPixelRatio(e.offsetX);
       var posY = scaleByPixelRatio(e.offsetY);
       updatePointerMoveData(pointer, posX, posY);
-    });
+    }, listenerOptions);
 
     window.addEventListener("mouseup", function () {
       updatePointerUpData(pointers[0]);
-    });
+    }, listenerOptions);
 
     window.addEventListener("touchstart", function (e) {
       // e.preventDefault();
@@ -1399,7 +1423,7 @@ const startCanvas = () => {
           posY
         );
       }
-    });
+    }, listenerOptions);
 
     window.addEventListener(
       "touchmove",
@@ -1416,7 +1440,7 @@ const startCanvas = () => {
           updatePointerMoveData(pointer, posX, posY);
         }
       },
-      false
+      listenerOptions
     );
 
     window.addEventListener("touchend", function (e) {
@@ -1432,8 +1456,9 @@ const startCanvas = () => {
       };
 
       for (var i = 0; i < touches.length; i++) loop(i);
-    });
+    }, listenerOptions);
   }, 750);
 };
 
-window.onload = setInterval(startCanvas, 750);
+window.startPortfolioCanvas = startCanvas;
+window.stopPortfolioCanvas = stopCanvas;

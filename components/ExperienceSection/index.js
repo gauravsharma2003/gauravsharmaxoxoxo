@@ -1,29 +1,16 @@
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
-
 import experienceData from "../../experience-data";
 import Link from "next/link";
 
 export default function ExperienceSection() {
     return (
-        <div className="skew relative z-10 h-fit md:px-32">
-            <div className='max-w-screen-xl mx-auto'>
-                <AliceCarousel
-                    autoWidth
-                    mouseTracking
-                    ssrSilentMode
-                    touchTracking
-                    disableButtonsControls
-                    swipeExtraPadding={2000}
-                    renderDotsItem={({ isActive }) => (
-                        <div className={`mx-1 h-2 w-2 rounded-full transition-all ${isActive ? 'bg-lightTextColor dark:bg-white w-4' : 'bg-gray-400 dark:bg-gray-600'
-                            }`} />
-                    )}
-                >
+        <div className="relative z-10 h-fit px-10 md:px-32">
+            <div className="max-w-screen-xl mx-auto">
+                <p className="mb-5 text-sm text-lightTextColor dark:text-white opacity-70">Scroll to explore experience →</p>
+                <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 experience-scroll" aria-label="Work experience">
                     {experienceData.map((experience, index) => (
                         <Experience {...experience} key={`experience-${index}`} />
                     ))}
-                </AliceCarousel>
+                </div>
             </div>
         </div>
     );
@@ -31,18 +18,18 @@ export default function ExperienceSection() {
 
 function Experience({ icon, date, organization, position, desc, website }) {
     return (
-        <div className="flex flex-col gap-4 px-10 md:pl-0 mr-12 select-none cursor-grab active:cursor-grabbing w-full md:w-[45rem] min-h-[35rem] justify-between pb-16">
+        <article className="flex flex-col gap-4 flex-none snap-start w-[85vw] md:w-[42rem] min-h-[30rem] justify-between p-6 md:p-8 rounded-xl bg-lightBgSecondaryColor dark:bg-bgSecondaryColor">
             <div className="flex flex-col gap-4 flex-1">
                 <div className="flex flex-col md:flex-row gap-4">
-                    <img src={icon} className="h-24 w-24 rounded-lg select-none object-contain" alt={organization + " logo"} />
+                    <img src={icon} loading="lazy" decoding="async" className="h-16 w-16 rounded-lg select-none object-contain" alt={organization + " logo"} />
                     <div className="flex flex-col">
-                        <span className="text-5xl text-lightTextColor dark:text-white">{organization}</span>
-                        <span className="text-5xl text-border break-words">{position}</span>
+                        <h3 className="text-2xl md:text-3xl text-lightTextColor dark:text-white">{organization}</h3>
+                        <p className="text-xl md:text-2xl text-border break-words">{position}</p>
                     </div>
                 </div>
                 <div className={"flex flex-col gap-2"}>
                     <div className="text-xl text-lightTextColor dark:text-white">{date}</div>
-                    <div className="text-xl text-lightTextColor dark:text-white whitespace-pre-line">{desc}</div>
+                    <p className="text-base md:text-lg leading-7 text-lightTextColor dark:text-white whitespace-pre-line">{desc}</p>
                 </div>
             </div>
             <Link href={website}>
@@ -53,6 +40,6 @@ function Experience({ icon, date, organization, position, desc, website }) {
                     Website
                 </a>
             </Link>
-        </div>
+        </article>
     )
 }
