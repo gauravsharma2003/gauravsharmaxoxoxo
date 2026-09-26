@@ -1,22 +1,22 @@
-# Asset URLs are content-versioned by Next.js or asset-url.js.
-# Keep HTML, robots.txt, and sitemap.xml revalidating so updates stay visible.
+# Next.js filenames and asset-url.js query strings change when content changes.
+# Cache versioned assets in browsers; keep HTML on Cloudflare's revalidating default.
 /_next/static/*
-  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 /_next/data/*
-  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 /assets/images/*
-  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 /assets/fonts/*
-  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 /assets/lib/*
-  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 /assets/resume/*
-  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+  Cache-Control: public, max-age=31536000, immutable
 
 /favicon.ico
-  Cache-Control: public, max-age=315360000, s-maxage=315360000, immutable
+  Cache-Control: public, max-age=86400

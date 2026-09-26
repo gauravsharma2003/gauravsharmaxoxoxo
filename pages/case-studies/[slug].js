@@ -1,6 +1,8 @@
 import Link from "next/link";
 import SEO from "../../components/SEO";
 import caseStudies from "../../case-study-data";
+import ArrowIcon from "../../components/ArrowIcon";
+import MetricValue from "../../components/MetricValue";
 
 export default function CaseStudy({ study, nextStudy, number }) {
   return (
@@ -31,13 +33,13 @@ export default function CaseStudy({ study, nextStudy, number }) {
             <p className="mt-2">{study.role}</p>
             <p className="mt-8 text-pink uppercase tracking-widest">Focus</p>
             <p className="mt-2">{study.category}</p>
-            <Link href="/case-studies"><a className="inline-block mt-9 border-b border-current hover:text-pink">All case studies ↗</a></Link>
+            <Link href="/case-studies"><a className="inline-flex items-center gap-2 mt-9 border-b border-current hover:text-pink">All case studies <ArrowIcon /></a></Link>
           </aside>
 
           <div className="max-w-3xl">
             <section aria-labelledby="outcome-heading" className="pb-12 md:pb-16 border-b border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor">
               <p className="text-sm tracking-[0.2em] uppercase text-pink">The result</p>
-              {study.metric && <p className="font-secondary text-6xl md:text-8xl leading-none mt-6 text-pink tabular-nums">{study.metric}</p>}
+              {study.metric && <p className="font-secondary text-6xl md:text-8xl leading-none mt-6 text-pink tabular-nums"><MetricValue value={study.metric} /></p>}
               <h2 id="outcome-heading" className="sr-only">Outcome</h2>
               <p className="mt-5 font-secondary text-2xl md:text-3xl leading-snug">{study.outcome}</p>
             </section>
@@ -73,7 +75,7 @@ export default function CaseStudy({ study, nextStudy, number }) {
           <p className="text-sm tracking-[0.2em] uppercase text-pink">Next case study</p>
           <Link href={`/case-studies/${nextStudy.slug}`}>
             <a className="group inline-flex items-center gap-4 mt-5 font-secondary text-3xl md:text-5xl hover:text-pink transition">
-              {nextStudy.title}<span aria-hidden="true" className="transition group-hover:translate-x-2">↗</span>
+              {nextStudy.title}<ArrowIcon className="transition group-hover:translate-x-2" />
             </a>
           </Link>
         </div>

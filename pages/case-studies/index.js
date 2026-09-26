@@ -2,6 +2,8 @@ import Link from "next/link";
 import SEO from "../../components/SEO";
 import SubHeader from "../../components/SubHeader";
 import caseStudies from "../../case-study-data";
+import ArrowIcon from "../../components/ArrowIcon";
+import MetricValue from "../../components/MetricValue";
 
 export default function CaseStudies() {
   const [featured, ...others] = caseStudies;
@@ -25,12 +27,12 @@ export default function CaseStudies() {
             <h2 className="mt-5 max-w-3xl font-secondary text-4xl md:text-6xl leading-tight text-lightTextColor dark:text-white">{featured.title}</h2>
             <p className="mt-5 max-w-2xl text-xl leading-9 text-lightTextColor dark:text-white">{featured.summary}</p>
             <Link href={`/case-studies/${featured.slug}`}>
-              <a className="inline-block mt-8 border-b-2 border-pink pb-1 text-lg text-lightTextColor dark:text-white transition hover:text-pink focus-visible:text-pink">Explore the case study <span aria-hidden="true">↗</span></a>
+              <a className="inline-flex items-center gap-2 mt-8 border-b-2 border-pink pb-1 text-lg text-lightTextColor dark:text-white transition hover:text-pink focus-visible:text-pink">Explore the case study <ArrowIcon /></a>
             </Link>
           </div>
           <div className="md:border-l md:border-lightBgSecondaryColorTranslucent dark:md:border-bgSecondaryColor md:pl-10 flex flex-col justify-end">
             <p className="text-xs uppercase tracking-[0.2em] text-pink">The measured shift</p>
-            <p className="mt-3 font-secondary text-5xl md:text-6xl leading-none tracking-tight text-pink tabular-nums">{featured.metric}</p>
+            <p className="mt-3 font-secondary text-5xl md:text-6xl leading-none tracking-tight text-pink tabular-nums"><MetricValue value={featured.metric} /></p>
             <p className="mt-3 text-base md:text-lg text-lightTextColor dark:text-white">{featured.metricLabel}</p>
             <div className="mt-8 space-y-4" role="img" aria-label="Games funnel progression increased from 18 percent to 74 percent">
               <div>
@@ -62,9 +64,9 @@ export default function CaseStudies() {
               </div>
               <div className="md:text-right">
                 <p className="text-sm tracking-wide text-lightTextColor dark:text-white opacity-70">{study.category}</p>
-                {study.metric && <p className="mt-3 text-2xl font-secondary text-pink tabular-nums">{study.metric}</p>}
+                {study.metric && <p className="mt-3 text-2xl font-secondary text-pink tabular-nums"><MetricValue value={study.metric} /></p>}
               </div>
-              <Link href={`/case-studies/${study.slug}`}><a aria-label={`Read ${study.title}`} className="hidden md:block text-2xl text-lightTextColor dark:text-white transition group-hover:translate-x-1 group-hover:text-pink">↗</a></Link>
+              <Link href={`/case-studies/${study.slug}`}><a aria-label={`Read ${study.title}`} className="hidden md:block text-2xl text-lightTextColor dark:text-white transition group-hover:translate-x-1 group-hover:text-pink"><ArrowIcon /></a></Link>
             </article>
           ))}
         </div>

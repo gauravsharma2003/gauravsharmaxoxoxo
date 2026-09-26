@@ -72,7 +72,15 @@ function Experience({ icon, date, organization, position, desc, website }) {
         <article data-experience-card className="flex flex-col gap-4 flex-none snap-start w-[85vw] md:w-[42rem] min-h-[30rem] justify-between p-6 md:p-8 rounded-xl bg-lightBgSecondaryColor dark:bg-bgSecondaryColor">
             <div className="flex flex-col gap-4 flex-1">
                 <div className="flex flex-col md:flex-row gap-4">
-                    <img src={icon} loading="lazy" decoding="async" className="h-16 w-16 rounded-lg select-none object-contain" alt={organization + " logo"} />
+                    <img
+                        src={icon}
+                        loading="lazy"
+                        decoding="async"
+                        width={organization === "Times Internet" ? 128 : 64}
+                        height={64}
+                        className={`${organization === "Times Internet" ? "w-32 bg-white p-2" : "w-16"} h-16 rounded-lg select-none object-contain`}
+                        alt={organization + " logo"}
+                    />
                     <div className="flex flex-col">
                         <h3 className="text-2xl md:text-3xl text-lightTextColor dark:text-white">{organization}</h3>
                         <p className="font-secondary text-xl md:text-2xl leading-snug text-lightTextColor dark:text-white break-words">{position}</p>

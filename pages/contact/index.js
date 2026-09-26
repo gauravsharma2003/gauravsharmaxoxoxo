@@ -2,6 +2,7 @@ import { SubHeader, Animatify, SEO } from "../../components";
 import { useForm, ValidationError } from "@formspree/react";
 import Head from "next/head";
 import Link from "next/link";
+import ArrowIcon from "../../components/ArrowIcon";
 
 export default function Contact() {
   const [state, handleSubmit] = useForm("mpwazwgr");
@@ -79,7 +80,7 @@ export default function Contact() {
           <div className="max-w-screen-xl mx-auto border-t border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor pt-6">
             <p className="text-xs md:text-sm uppercase tracking-[0.22em] text-pink">Prefer email?</p>
             <a href="mailto:sharmagauravxo@gmail.com" className="inline-block max-w-full mt-4 font-secondary text-[clamp(1.4rem,4.5vw,4rem)] leading-tight tracking-tight text-lightTextColor dark:text-white break-all sm:break-normal transition-colors hover:text-pink focus-visible:text-pink">
-              sharmagauravxo@gmail.com <span aria-hidden="true">↗</span>
+              sharmagauravxo@gmail.com <ArrowIcon />
             </a>
           </div>
         </div>
