@@ -51,8 +51,12 @@
 }
 
 .experience-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: #513bff transparent;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.experience-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
