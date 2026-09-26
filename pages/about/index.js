@@ -12,8 +12,8 @@ export default function About() {
   return (
     <div className="w-full pt-4 h-fit">
       <SEO
-        title="About / Gaurav Sharma"
-        desc="A product-focused professional based in India, working at the intersection of product strategy, data, and execution. Completed a B.Tech in Information Technology from Guru Gobind Singh Indraprastha University in 2026."
+        title="About Gaurav Sharma | Associate Product Manager at Paytm"
+        desc="Gaurav Sharma is an Associate Product Manager at Paytm with two years of product experience across Paytm and Times Internet. B.Tech in Information Technology, completed in 2026."
         img="public/assets/images/seo/about.webp"
       />
       <Animatify>
@@ -21,16 +21,18 @@ export default function About() {
           <div className="md:grid md:grid-cols-[minmax(0,1fr)_minmax(14rem,0.45fr)] md:items-center gap-10 max-w-screen-xl mx-auto border-t border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor pt-6 md:pt-8">
             <div>
               <div className="relative z-10">
-                <p className="text-xs md:text-sm uppercase tracking-[0.22em] text-pink">About / Portfolio</p>
+                <p className="text-xs md:text-sm uppercase tracking-[0.22em] text-pink">Associate Product Manager / Paytm</p>
                 <h1 className="mt-4 font-secondary text-[clamp(2.5rem,5vw,4.75rem)] leading-[1.06] tracking-[-0.035em] text-lightTextColor dark:text-white">
                   Gaurav Sharma
                 </h1>
                 <p className="block mt-7 max-w-2xl text-base md:text-lg leading-relaxed text-lightTextColor dark:text-white">
-                  I am a product-focused professional based in India, working at the intersection
-                  of product strategy, technology, and execution. I currently work on building
-                  user-centric products with a strong emphasis on retention, personalization,
-                  and scalable systems. I completed my B.Tech in Information Technology from
-                  Guru Gobind Singh Indraprastha University in 2026.
+                  I’m an Associate Product Manager at Paytm, where I turn customer needs and
+                  business goals into product decisions teams can ship. Before Paytm, I worked
+                  on consumer products at Times Internet. I bring two years of product experience
+                  across both organizations, from discovery and prioritization through delivery.
+                  I completed my B.Tech in Information Technology in 2026, giving me the
+                  engineering fluency to work closely with technical teams while keeping the
+                  focus on users and measurable outcomes.
                 </p>
 
                 <Link href="/resume">
