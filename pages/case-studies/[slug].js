@@ -4,7 +4,7 @@ import caseStudies from "../../case-study-data";
 
 export default function CaseStudy({ study, nextStudy, number }) {
   return (
-    <div className="h-fit w-full px-10 md:px-32 pb-24 text-lightTextColor dark:text-white">
+    <div className="h-fit w-full px-6 sm:px-10 md:px-20 lg:px-32 pb-24 text-lightTextColor dark:text-white">
       <SEO title={study.metaTitle} desc={study.metaDescription} img="/assets/images/seo/gaurav.webp" />
       <article className="max-w-screen-xl mx-auto">
         <nav aria-label="Breadcrumb" className="pt-10 text-sm text-lightTextColor dark:text-white opacity-70">
@@ -15,10 +15,14 @@ export default function CaseStudy({ study, nextStudy, number }) {
           <span>{study.title}</span>
         </nav>
 
-        <header className="pt-16 md:pt-24 pb-14 md:pb-20 border-b-2 border-lightTextColor dark:border-white">
-          <p className="text-sm tracking-[0.2em] uppercase text-pink">Case study / 0{number} / {study.category}</p>
-          <h1 className="mt-6 max-w-5xl font-secondary text-5xl md:text-7xl leading-[1.08] tracking-tight">{study.title}</h1>
-          <p className="mt-7 max-w-3xl text-xl md:text-2xl leading-9 opacity-80">{study.summary}</p>
+        <header className="mt-16 md:mt-20 border-t border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor pt-6 md:pt-8 pb-12 md:pb-16 border-b border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor">
+          <div className="grid gap-4 md:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.55fr)] md:items-end md:gap-10">
+            <div>
+              <p className="text-xs md:text-sm tracking-[0.22em] uppercase text-pink">Case study / 0{number} / {study.category}</p>
+              <h1 className="mt-4 font-secondary text-[clamp(2.5rem,5vw,4.75rem)] leading-[1.06] tracking-[-0.035em] text-balance">{study.title}</h1>
+            </div>
+            <p className="max-w-lg text-base md:text-lg leading-relaxed opacity-80 md:pb-1">{study.summary}</p>
+          </div>
         </header>
 
         <div className="grid gap-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-20 pt-12 md:pt-16">

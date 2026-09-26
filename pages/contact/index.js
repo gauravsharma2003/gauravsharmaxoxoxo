@@ -18,7 +18,8 @@ export default function Contact() {
       <Animatify>
         <SubHeader
           title="Contact Me"
-          caption="You got something to say? Feel free to reach out to me, I’ll respond as soon as possible"
+          eyebrow="Get in touch / Portfolio"
+          caption="Have a product question, project, or opportunity in mind? Send me a note."
         />
         <div className="px-10 md:px-32 relative z-10">
           <div className="max-w-screen-xl mx-auto">
@@ -74,16 +75,13 @@ export default function Contact() {
             </form>
           </div>
         </div>
-        <div className="text-center">
-          <Link href="mailto:sharmagauravxo@gmail.com">
-            <a target="_blank">
-              <div className="mt-12 md:m-auto ">
-                <h1 className="text-border text-[10vw] md:text-[7rem] whitespace-nowrap transition hover:scale-105">
-                   Sharmagauravxo@gmail.com
-                </h1>
-              </div>
+        <div className="px-6 sm:px-10 md:px-20 lg:px-32 mt-16">
+          <div className="max-w-screen-xl mx-auto border-t border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor pt-6">
+            <p className="text-xs md:text-sm uppercase tracking-[0.22em] text-pink">Prefer email?</p>
+            <a href="mailto:sharmagauravxo@gmail.com" className="inline-block max-w-full mt-4 font-secondary text-[clamp(1.4rem,4.5vw,4rem)] leading-tight tracking-tight text-lightTextColor dark:text-white break-all sm:break-normal transition-colors hover:text-pink focus-visible:text-pink">
+              sharmagauravxo@gmail.com <span aria-hidden="true">↗</span>
             </a>
-          </Link>
+          </div>
         </div>
       </Animatify>
     </div>
@@ -95,7 +93,8 @@ function ThankYouMessage() {
     <div className="h-fit w-full">
       <SubHeader
         title="Contact Me"
-        caption="You got something to say? Feel free to reach out to me, I’ll respond as soon as possible"
+        eyebrow="Get in touch / Portfolio"
+        caption="Have a product question, project, or opportunity in mind? Send me a note."
       />
       <div className="px-10 md:px-32 relative z-10">
         <div className="max-w-screen-xl mx-auto">

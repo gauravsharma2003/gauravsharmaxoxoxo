@@ -21,7 +21,7 @@ const Home = () => {
       <ExperienceSection />
 
       <section className="px-6 sm:px-10 md:px-20 lg:px-32 mt-20 md:mt-28" aria-labelledby="home-case-studies-title">
-        <div className="max-w-screen-xl mx-auto border-y border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor py-7 md:py-10">
+        <div className="max-w-screen-xl mx-auto border-t border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor py-7 md:py-10">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(18rem,0.9fr)] lg:gap-16">
             <div>
               <p className="text-xs md:text-sm uppercase tracking-[0.22em] text-pink">02 / Case studies</p>

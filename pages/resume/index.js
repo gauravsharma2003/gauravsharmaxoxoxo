@@ -11,7 +11,8 @@ export default function Resume() {
       />
       <SubHeader
         title="My Resume"
-        caption="Take a look at my resume to get a more formal description about myself. To know stuff like my education, etc. You can download my resume for future reference."
+        eyebrow="Background / Portfolio"
+        caption="A concise view of my experience, education, and skills. You can download a copy for reference."
       />
       <div className="px-10 md:px-32 relative z-10">
         <div className="max-w-screen-xl mx-auto">

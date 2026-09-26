@@ -16,6 +16,7 @@ export default function Page({ project, randomProject }) {
         <SubHeader
           title={project.title}
           caption={project.miniDesc}
+          eyebrow="Project / Portfolio"
         />
         <div className="px-10 md:px-32">
           <div className="relative z-10 max-w-screen-xl mx-auto">
@@ -94,7 +95,8 @@ export default function Page({ project, randomProject }) {
         <SubHeader
           title="Next Project"
           headingLevel={2}
-          caption="This is not the only project I made, check out this other project that this page randomly chose for you to see, hope you'll like it. And if you don't go back to the projects page to see all the projects I have built so far."
+          eyebrow="Continue exploring / Portfolio"
+          caption="Another project from the portfolio, with more work available on the projects page."
         />
         <ProjectCards {...randomProject} />
         <span className="relative z-10 block text-center mx-auto mt-16 text-lightTextColor dark:text-white text-xl skew">

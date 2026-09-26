@@ -1,26 +1,25 @@
 import Link from "next/link";
 import SEO from "../../components/SEO";
+import SubHeader from "../../components/SubHeader";
 import caseStudies from "../../case-study-data";
 
 export default function CaseStudies() {
   const [featured, ...others] = caseStudies;
   return (
-    <div className="h-fit w-full px-10 md:px-32 pb-24">
+    <div className="h-fit w-full pb-24">
       <SEO
         title="Product Management Case Studies | Gaurav Sharma"
         desc="Product management case studies by Gaurav Sharma covering consumer app retention, news personalisation, TOI App product strategy, funnel optimisation, and cross-functional execution."
         img="/assets/images/seo/gaurav.webp"
       />
-      <div className="max-w-screen-xl mx-auto pt-12 md:pt-20">
-        <p className="text-xs md:text-sm tracking-[0.22em] uppercase text-pink">Selected work / Times Internet</p>
-        <h1 className="mt-6 max-w-4xl font-secondary text-5xl md:text-7xl leading-[1.08] tracking-tight text-lightTextColor dark:text-white">
-          Product decisions, measured in outcomes.
-        </h1>
-        <p className="mt-7 max-w-2xl text-xl md:text-2xl leading-9 text-lightTextColor dark:text-white opacity-80">
-          Five views into my work on consumer news products: where users dropped off, what teams changed, and what the results showed.
-        </p>
-
-        <article className="relative mt-16 md:mt-24 border-t-2 border-lightTextColor dark:border-white pt-7 md:pt-10 grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(16rem,0.45fr)]">
+      <SubHeader
+        title="Case studies"
+        eyebrow="Selected work / Times Internet"
+        caption="Five views into my work on consumer news products: the questions, decisions, and results behind each one."
+      />
+      <div className="px-6 sm:px-10 md:px-20 lg:px-32">
+      <div className="max-w-screen-xl mx-auto">
+        <article className="relative mt-4 md:mt-8 border-t border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor pt-7 md:pt-10 grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(16rem,0.45fr)]">
           <div>
             <p className="text-sm tracking-widest uppercase text-pink">01 / Featured case study</p>
             <h2 className="mt-5 max-w-3xl font-secondary text-4xl md:text-6xl leading-tight text-lightTextColor dark:text-white">{featured.title}</h2>
@@ -69,6 +68,7 @@ export default function CaseStudies() {
             </article>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

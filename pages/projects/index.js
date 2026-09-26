@@ -12,7 +12,8 @@ export default function Projects() {
       />
       <SubHeader
         title="My Projects"
-        caption="Take a look at these projects I made in the name of Software Development. I am quite proud of how most of them turned out. Most of them are available on GitHub, so feel free to check them out! The others are client/freelance projects."
+        eyebrow="Selected builds / Portfolio"
+        caption="Web and mobile products I have built, including personal projects and client work."
       />
       <div className="grid grid-cols-1 gap-24">
         <Animatify>
