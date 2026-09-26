@@ -507,7 +507,11 @@ const startCanvas = () => {
   var sunrays;
   var sunraysTemp;
 
-  var ditheringTexture = createTextureAsync("LDR_LLL1_0.webp");
+  // Bloom is disabled above, so its dithering texture is not needed. Avoid
+  // requesting a missing image on every desktop visit.
+  var ditheringTexture = config.BLOOM
+    ? createTextureAsync("LDR_LLL1_0.webp")
+    : null;
 
   var blurProgram = new Program(blurVertexShader, blurShader);
   var copyProgram = new Program(baseVertexShader, copyShader);
