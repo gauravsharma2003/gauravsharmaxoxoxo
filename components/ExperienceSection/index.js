@@ -76,9 +76,9 @@ function Experience({ icon, date, organization, position, desc, website }) {
                         src={icon}
                         loading="lazy"
                         decoding="async"
-                        width={organization === "Times Internet" ? 128 : 64}
+                        width={128}
                         height={64}
-                        className={`${organization === "Times Internet" ? "w-32 bg-white p-2" : "w-16"} h-16 rounded-lg select-none object-contain`}
+                        className="h-16 w-32 rounded-lg bg-white p-2 select-none object-contain"
                         alt={organization + " logo"}
                     />
                     <div className="flex flex-col">

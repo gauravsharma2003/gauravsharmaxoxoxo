@@ -36,7 +36,7 @@ var experienceData = [
   },
 
   {
-    icon: "https://iic.mic.gov.in/assets/assets/images/iiclogo.png",
+    icon: assetUrl("/assets/images/iic-logo.png"),
     date: "President • July 2023 - August 2024",
     organization: "IIC, GTBIT, GGSIPU",
     position: "President",
