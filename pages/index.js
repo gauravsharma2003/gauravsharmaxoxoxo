@@ -20,7 +20,7 @@ const Home = () => {
       <SubHeader title="Experience" headingLevel={2} homeIndex="01" caption="Where I have shaped product direction, improved user journeys, and worked with teams to ship." />
       <ExperienceSection />
 
-      <section className="px-6 sm:px-10 md:px-20 lg:px-32 mt-20 md:mt-28" aria-labelledby="home-case-studies-title">
+      <section className="px-6 sm:px-10 md:px-20 lg:px-32 mt-12 md:mt-20" aria-labelledby="home-case-studies-title">
         <div className="max-w-screen-xl mx-auto border-t border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor py-7 md:py-10">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(18rem,0.9fr)] lg:gap-16">
             <div>

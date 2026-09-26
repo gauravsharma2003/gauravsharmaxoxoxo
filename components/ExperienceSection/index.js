@@ -47,20 +47,20 @@ export default function ExperienceSection() {
                         <Experience {...experience} key={`experience-${index}`} />
                     ))}
                 </div>
-                <div className="mt-6 flex items-center justify-center gap-2" role="group" aria-label="Experience carousel navigation">
+                <div className="mt-2 flex items-center justify-center gap-1" role="group" aria-label="Experience carousel navigation">
                     {activeIndex > 0 ? (
-                        <button type="button" onClick={() => goToCard(activeIndex - 1)} className="flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-lightBgSecondaryColor dark:hover:bg-bgSecondaryColor" aria-label={`Previous experience: ${experienceData[activeIndex - 1].position}`}>
-                            <span className="h-2 w-2 rounded-full bg-lightTextColor dark:bg-white" aria-hidden="true" />
+                        <button type="button" onClick={() => goToCard(activeIndex - 1)} className="group flex h-[40px] w-[40px] items-center justify-center rounded-full" aria-label={`Previous experience: ${experienceData[activeIndex - 1].position}`}>
+                            <span className="h-[6px] w-[6px] rounded-full bg-lightTextColor dark:bg-white opacity-60 transition-transform duration-200 group-hover:scale-150" aria-hidden="true" />
                         </button>
-                    ) : <span className="h-10 w-10" aria-hidden="true" />}
-                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-pink text-base font-semibold tabular-nums text-white" role="status" aria-label={`Experience ${activeIndex + 1} of ${experienceData.length}`}>
-                        {activeIndex + 1} / {experienceData.length}
+                    ) : <span className="h-[40px] w-[40px]" aria-hidden="true" />}
+                    <span className="flex h-[34px] w-[34px] items-center justify-center rounded-full border border-pink bg-lightBgSecondaryColor dark:bg-bgSecondaryColor text-[11px] font-semibold tabular-nums text-lightTextColor dark:text-white" role="status" aria-label={`Experience ${activeIndex + 1} of ${experienceData.length}`}>
+                        {activeIndex + 1}<span className="opacity-50">/{experienceData.length}</span>
                     </span>
                     {activeIndex < experienceData.length - 1 ? (
-                        <button type="button" onClick={() => goToCard(activeIndex + 1)} className="flex h-10 w-10 items-center justify-center rounded-full transition hover:bg-lightBgSecondaryColor dark:hover:bg-bgSecondaryColor" aria-label={`Next experience: ${experienceData[activeIndex + 1].position}`}>
-                            <span className="h-2 w-2 rounded-full bg-lightTextColor dark:bg-white" aria-hidden="true" />
+                        <button type="button" onClick={() => goToCard(activeIndex + 1)} className="group flex h-[40px] w-[40px] items-center justify-center rounded-full" aria-label={`Next experience: ${experienceData[activeIndex + 1].position}`}>
+                            <span className="h-[6px] w-[6px] rounded-full bg-lightTextColor dark:bg-white opacity-60 transition-transform duration-200 group-hover:scale-150" aria-hidden="true" />
                         </button>
-                    ) : <span className="h-10 w-10" aria-hidden="true" />}
+                    ) : <span className="h-[40px] w-[40px]" aria-hidden="true" />}
                 </div>
             </div>
         </section>

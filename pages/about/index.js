@@ -13,7 +13,7 @@ export default function About() {
     <div className="w-full pt-4 h-fit">
       <SEO
         title="About / Gaurav Sharma"
-        desc="A product-focused professional based in India, working at the intersection of product strategy, data, and execution. Currently pursuing B.Tech in Information Technology from Guru Gobind Singh Indraprastha University."
+        desc="A product-focused professional based in India, working at the intersection of product strategy, data, and execution. Completed a B.Tech in Information Technology from Guru Gobind Singh Indraprastha University in 2026."
         img="public/assets/images/seo/about.webp"
       />
       <Animatify>
@@ -29,9 +29,8 @@ export default function About() {
                   I am a product-focused professional based in India, working at the intersection
                   of product strategy, technology, and execution. I currently work on building
                   user-centric products with a strong emphasis on retention, personalization,
-                  and scalable systems. I am {new Date().getFullYear() - 2003} years old and am
-                  pursuing a B.Tech in Information Technology from Guru Gobind Singh Indraprastha
-                  University.
+                  and scalable systems. I completed my B.Tech in Information Technology from
+                  Guru Gobind Singh Indraprastha University in 2026.
                 </p>
 
                 <Link href="/resume">
