@@ -5,8 +5,8 @@ export default function Resume() {
   return (
     <div>
       <SEO
-        title="Resume / Gaurav"
-        desc="Take a look at my resume to get a more formal description about myself. To know stuff like my education, etc. You can download my resume for future reference."
+        title="Resume | Gaurav Sharma"
+        desc="View Gaurav Sharma’s resume for his product-management experience at Paytm and Times Internet, education, and skills."
         img="public/assets/images/seo/about.webp"
       />
       <SubHeader

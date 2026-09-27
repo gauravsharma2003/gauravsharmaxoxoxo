@@ -12,8 +12,8 @@ export default function Contact() {
   return (
     <div className="h-fit w-full">
       <SEO
-        title="Contact / Gaurav"
-        desc="You got something to say? Feel free to reach out to me, I’ll respond as soon as possible."
+        title="Contact Gaurav Sharma | Product Manager"
+        desc="Contact Gaurav Sharma about product-management opportunities, product work, or collaboration."
         img="public/assets/images/seo/about.webp"
       />
       <Animatify>

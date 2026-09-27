@@ -1,0 +1,37 @@
+# Gaurav Sharma
+
+> Portfolio of Gaurav Sharma, an Associate Product Manager at Paytm working on agentic AI products, with previous product experience at Times Internet.
+
+This site presents Gaurav's product experience, selected product-management case studies, software projects, resume, and contact information. The case studies describe his work and outcomes; project pages describe personal and portfolio software projects.
+
+## Main pages
+
+- [Home](https://gauravsharma.cc/): Product experience, selected case studies, and featured projects.
+- [About](https://gauravsharma.cc/about): Background, product experience, and working approach.
+- [Resume](https://gauravsharma.cc/resume): Resume and experience overview.
+- [Contact](https://gauravsharma.cc/contact): Contact form and email.
+
+## Case studies
+
+- [TOI App Games Funnel Optimization](https://gauravsharma.cc/case-studies/toi-app-games-funnel-optimization): Improving discovery and entry into the Times of India App games experience.
+- [Consumer App Retention Through Interactive Content](https://gauravsharma.cc/case-studies/consumer-app-retention): Retention work using interactive content, funnel design, UX improvements, and analytics.
+- [TOI App Homepage Redesign](https://gauravsharma.cc/case-studies/toi-app-homepage-redesign): Homepage hierarchy, personalisation, and content discovery.
+- [News Personalization Product Operations](https://gauravsharma.cc/case-studies/news-personalization-product-operations): Operationalising news personalisation across product, ML, engineering, design, and editorial teams.
+- [ET Markets Integration in the TOI App](https://gauravsharma.cc/case-studies/et-markets-toi-app-integration): Integrating a specialist markets experience into a consumer news app.
+- [All case studies](https://gauravsharma.cc/case-studies)
+
+## Software projects
+
+- [Projects index](https://gauravsharma.cc/projects): Portfolio software projects and links to their source repositories.
+- [Shoe-ping e-commerce](https://gauravsharma.cc/projects/shoe-store)
+- [Geet-Ify music app](https://gauravsharma.cc/projects/geet-ify)
+- [SehatSutra AI](https://gauravsharma.cc/projects/sehat-sutra-ai)
+- [News App](https://gauravsharma.cc/projects/news-app)
+- [Weather App](https://gauravsharma.cc/projects/weather-app)
+- [Snake Game](https://gauravsharma.cc/projects/snake-game)
+
+## Additional references
+
+- [Sitemap](https://gauravsharma.cc/sitemap.xml)
+- [GitHub](https://github.com/gauravsharma2003)
+- [LinkedIn](https://www.linkedin.com/in/gauravsharma2003/)

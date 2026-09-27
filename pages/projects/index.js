@@ -6,8 +6,8 @@ export default function Projects() {
   return (
     <div className="h-fit w-full">
       <SEO
-        title="Projects / Gaurav Sharma"
-        desc="Take a look at these projects I made in the name of Software Development. I am quite proud of how most of them turned out. Most of them are available on GitHub, so feel free to check them out!"
+        title="Software Projects | Gaurav Sharma"
+        desc="Explore software projects by Gaurav Sharma, including an e-commerce app, a React Native music app, an AI healthcare concept, and smaller web apps. Source code is linked where available."
         img="/assets/images/seo/about.webp"
       />
       <SubHeader
