@@ -49,7 +49,7 @@ export default function ProjectCards({
           </div>
         </div>
         <div className="relative">
-          <div aria-hidden="true" className="ambient-glow absolute inset-0 pointer-events-none" />
+          <div aria-hidden="true" className="ambient-glow absolute inset-0 hidden pointer-events-none md:block" />
           <img
             className="relative z-10 md:max-w-sm lg:max-w-xl rounded-xl transition duration-300 hover:scale-105 shadow-2xl"
             src={img}

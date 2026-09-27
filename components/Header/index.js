@@ -134,11 +134,12 @@ function DesktopNavLink({ href, name, currentURL, target }) {
   );
 }
 
-function MobileNavLink({ href, name, currentURL, target = '_self' }) {
+function MobileNavLink({ href, name, currentURL, target = '_self', onClick }) {
   return (
     <Link href={href} prefetch={false}>
       <a
           target={target}
+        onClick={onClick}
         className={`block text-4xl text-lightTextColor dark:text-white my-7 ${
           currentURL === href
             ? ""
@@ -152,97 +153,101 @@ function MobileNavLink({ href, name, currentURL, target = '_self' }) {
 }
 
 function MobileHeader({ isAtTop, currentURL, changeTheme }) {
-  const [isOpen, setIsOpen] = useState(false),
-    handleClick = () => {
-      setIsOpen(!isOpen);
-    };
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div
-        className={`transition h-20 md:h-16 w-full z-30 px-10 md:px-32 ${
+        className={`transition h-20 w-full z-30 px-6 sm:px-10 ${
           !isAtTop
             ? `backdrop-blur-lg bg-extraLightBgColorTranslucent dark:bg-extraDarkBgColorTranslucent`
             : ""
         }`}
       >
-        <div className="grid grid-cols-2 h-full">
+        <div className="flex items-center justify-between gap-4 h-full">
           <div
-            className={`text-lightTextColor dark:text-white text-3xl md:text-4xl my-auto`}
+            className="min-w-0 truncate whitespace-nowrap text-[clamp(1.5rem,5vw,1.875rem)] text-lightTextColor dark:text-white"
           >
             <Link href="/">{isAtTop ? "GS" : "Gaurav Sharma"}</Link>
           </div>
-          <div
-            className="scale-75 origin-right md:scale-100 h-10 w-12 md:w-10 my-auto ml-auto relative"
-            onClick={handleClick}
+          <button
+            type="button"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+            className="relative h-[44px] w-[44px] shrink-0"
+            onClick={() => setIsOpen((open) => !open)}
           >
             <div
-              className={`transition m-auto origin-center h-[3px] w-full bg-lightTextColor dark:bg-white rounded-xl absolute ${
+              aria-hidden="true"
+              className={`absolute left-[7px] h-[3px] w-[30px] origin-center rounded-xl bg-lightTextColor transition dark:bg-white ${
                 isOpen
-                  ? "rotate-45 left-0 top-0 bottom-0 right-0 "
-                  : "left-0 top-2 "
+                  ? "top-[21px] rotate-45"
+                  : "top-[14px]"
               }`}
             ></div>
             <div
-              className={`transition m-auto origin-center h-[3px] bg-lightTextColor dark:bg-white rounded-xl absolute ${
+              aria-hidden="true"
+              className={`absolute h-[3px] origin-center rounded-xl bg-lightTextColor transition dark:bg-white ${
                 isOpen
-                  ? "-rotate-45 w-full left-0 top-0 bottom-0 right-0"
-                  : "right-0 top-6 w-2/3"
+                  ? "left-[7px] top-[21px] w-[30px] -rotate-45"
+                  : "right-[7px] top-[27px] w-[20px]"
               }`}
             ></div>
-          </div>
+          </button>
         </div>
       </div>
-      <div
-        className={`transition fixed left-0 top-20 h-[calc(100dvh-5rem)] w-full overflow-y-auto ${
-          isOpen
-            ? `backdrop-blur-lg bg-extraLightBgColorTranslucent dark:bg-extraDarkBgColorTranslucent`
-            : "pointer-events-none"
-        } z-20`}
-        onClick={handleClick}
-      >
-        <div
-          className={`transition h-full w-full ml-auto ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+      {isOpen && (
+        <nav
+          id="mobile-navigation"
+          aria-label="Mobile navigation"
+          className="fixed inset-x-0 top-20 z-20 h-[calc(100dvh-5rem)] overflow-x-hidden overflow-y-auto backdrop-blur-lg bg-extraLightBgColorTranslucent dark:bg-extraDarkBgColorTranslucent"
         >
-          <div className="px-10">
+          <div className="px-6 sm:px-10">
             <MobileNavLink
               href="/"
               name="Home"
               currentURL={currentURL}
+              onClick={() => setIsOpen(false)}
             />
             <MobileNavLink
               href="/projects"
               name="Projects"
               currentURL={currentURL}
+              onClick={() => setIsOpen(false)}
             />
             <MobileNavLink
               href="/case-studies"
               name="Case Studies"
               currentURL={currentURL}
+              onClick={() => setIsOpen(false)}
             />
             
             <MobileNavLink
               href="/about"
               name="About"
               currentURL={currentURL}
+              onClick={() => setIsOpen(false)}
             />
             <MobileNavLink
               href="/contact"
               name="Contact"
               currentURL={currentURL}
+              onClick={() => setIsOpen(false)}
             />
-            <div className="mt-4 h-full w-full flex gap-12 items-center">
+            <div className="mt-6 flex w-full items-center gap-4">
               <Link href="/resume" prefetch={false}>
                 <a
-                  className={`px-6 py-4 w-full text-lightTextColor border-lightTextColor dark:text-white text-5xl dark:border-white border-2 mr-auto my-auto rounded-xl`}
+                  onClick={() => setIsOpen(false)}
+                  className="min-w-0 flex-1 rounded-xl border-2 border-lightTextColor px-4 py-3 text-center text-2xl text-lightTextColor dark:border-white dark:text-white"
                 >
                   Resume
                 </a>
               </Link>
               <button
+                type="button"
+                aria-label="Change color theme"
                 onClick={changeTheme}
-                className={`text-lightTextColor dark:text-white text-5xl outline-none bg-none border-none my-auto`}
+                className="grid h-12 w-12 shrink-0 place-items-center rounded-xl text-3xl text-lightTextColor dark:text-white"
               >
                 <div className="block dark:hidden">
                   <FiMoon />
@@ -253,8 +258,8 @@ function MobileHeader({ isAtTop, currentURL, changeTheme }) {
               </button>
             </div>
           </div>
-        </div>
-      </div>
+        </nav>
+      )}
     </>
   );
 }
