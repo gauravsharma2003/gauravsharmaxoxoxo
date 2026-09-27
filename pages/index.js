@@ -19,8 +19,10 @@ const Home = () => {
         img="/assets/images/seo/gaurav.webp"
       />
       <HomeHeroSection />
-      <SubHeader title="Experience" headingLevel={2} homeIndex="01" caption="Where I have shaped product direction, improved user journeys, and worked with teams to ship." />
-      <ExperienceSection />
+      <div id="experience" className="scroll-mt-20 md:scroll-mt-16">
+        <SubHeader title="Experience" headingLevel={2} homeIndex="01" caption="Where I have shaped product direction, improved user journeys, and worked with teams to ship." />
+        <ExperienceSection />
+      </div>
 
       <section className="px-6 sm:px-10 md:px-20 lg:px-32 mt-12 md:mt-20" aria-labelledby="home-case-studies-title">
         <div className="max-w-screen-xl mx-auto border-t border-lightBgSecondaryColorTranslucent dark:border-bgSecondaryColor py-7 md:py-10">

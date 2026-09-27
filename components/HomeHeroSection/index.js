@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import assetUrl from "../../asset-url";
+import ArrowIcon from "../ArrowIcon";
 
 export default function HomeHeroSection() {
   useEffect(() => {
@@ -62,62 +62,26 @@ export default function HomeHeroSection() {
   }, []);
 
   return (
-    <div id="portfolio-hero" className="min-h-[100dvh] w-full relative -mt-20 md:-mt-16">
+    <div id="portfolio-hero" className="min-h-[100dvh] w-full relative -mt-20 md:-mt-16 overflow-hidden">
       <div className="hero-background absolute inset-0 bg-center bg-no-repeat bg-cover"></div>
       <canvas className="hidden md:block absolute inset-0 h-full w-full pointer-events-none" id="liquid-canvas" aria-hidden="true"></canvas>
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-white/85 via-white/60 to-white/15 dark:from-bgColor/90 dark:via-bgColor/70 dark:to-bgColor/20"></div>
       <div className="absolute h-1/4 w-full bg-gradient-to-b from-transparent transition duration-300 to-white translate-y-1 pointer-events-none dark:opacity-0 opacity-100 bottom-0"></div>
       <div className="absolute h-1/4 w-full bg-gradient-to-b from-transparent transition duration-300 to-bgColor translate-y-1 pointer-events-none opacity-0 dark:opacity-100 bottom-0"></div>
-      <div className="absolute w-full h-full pointer-events-none">
-        <div className="skew absolute top-0 left-0 bottom-0 right-0 m-auto z-10 h-fit w-fit px-10">
-          <div className="md:px-6">
-            <span className="m-auto block text-base md:text-xl text-lightTextColor dark:text-white md:text-center">
-              <span
-                className="underline underline-offset-8 text-pink dark:text-blue"
-              >
-                Gaurav Sharma
-              </span>
-              {" · Associate Product Manager (APM) at Paytm"}
-            </span>
-            <h1 className="md:leading-[9rem] mb-6 block text-[13vw] sm:text-[7rem] text-lightTextColor dark:text-white md:text-center font-secondary max-w-[100vw] md:max-w-[80rem]">
-              Building Products, Experiences & Scalable Systems
-            </h1>
-            <span className="md:m-auto block text-lightTextColor dark:text-white text-2xl md:text-xl leading-10 md:text-center max-w-xl my-4">
-              At Paytm, I work on agentic AI products at the intersection of{" "}
-              <span
-                className="text-pink dark:text-blue"
-              >
-                product, technology, and execution
-              </span>
-              , focused on building user-first experiences.
-            </span>
-
-            <div className="flex justify-center items-center gap-6 mt-8">
-              <a
-                className="text-lightTextColor dark:text-white text-4xl md:text-2xl w-fit inline pointer-events-auto"
-                href="https://github.com/gauravsharma2003"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FiGithub />
-              </a>
-              <a
-                className="text-lightTextColor dark:text-white text-4xl md:text-2xl w-fit inline pointer-events-auto"
-                href="https://linkedin.com/in/gauravsharma2003"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FiLinkedin />
-              </a>
-              <a
-                className="text-lightTextColor dark:text-white text-4xl md:text-2xl w-fit inline pointer-events-auto"
-                href="mailto:sharmagauravxo@gmail.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FiMail />
-              </a>
-            </div>
-          </div>
+      <div className="relative z-10 mx-auto flex min-h-[100dvh] max-w-screen-xl items-center px-6 pb-16 pt-28 sm:px-10 md:px-20 md:pb-20 md:pt-24 lg:px-32">
+        <div className="w-full max-w-[760px]">
+          <p className="mb-6 text-xs sm:text-sm uppercase tracking-[0.2em] text-lightTextColor/80 dark:text-white/80">
+            Gaurav Sharma
+          </p>
+          <h1 className="max-w-[13ch] font-secondary text-[clamp(3.6rem,7vw,7rem)] leading-[1.06] tracking-[-0.035em] text-lightTextColor dark:text-white">
+            Making complex ideas useful.
+          </h1>
+          <p className="mt-7 max-w-[34rem] text-lg sm:text-xl md:text-2xl leading-[1.45] text-lightTextColor dark:text-white">
+            I’m an Associate Product Manager at Paytm shaping agentic travel experiences.
+          </p>
+          <a href="#experience" className="mt-9 inline-flex min-h-[44px] items-center gap-3 border-b-2 border-pink text-base md:text-lg font-semibold text-lightTextColor dark:text-white transition hover:gap-4">
+            Explore my work <ArrowIcon />
+          </a>
         </div>
       </div>
     </div>
