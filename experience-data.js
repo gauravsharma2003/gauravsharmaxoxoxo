@@ -11,7 +11,9 @@ var experienceData = [
 
 • Collaborating with data science, engineering, product, and business teams to shape the experience and technical approach.
 
-• Exploring AI-driven automations that remove repetitive work and reduce operational overhead across the journey.`,
+• Working on evals for the AI layer, improving how we assess agent behaviour and use the findings to refine the experience.
+
+• Designing AI-driven automations to remove repetitive work and reduce operational overhead across the travel journey.`,
     focusLabel: "Current initiative",
     focus: "Check-in · Paytm Travel",
     website: "https://paytm.com/"

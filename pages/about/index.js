@@ -54,7 +54,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <SubHeader title="Why hire me?" headingLevel={2} eyebrow="How I work / Portfolio" caption="Product judgment, technical fluency, and the ability to carry a decision through delivery." />
+        <SubHeader title="Why hire me?" headingLevel={2} eyebrow="How I work / Portfolio" caption="AI product thinking, measurable automation, and the judgment to turn new capabilities into useful experiences." />
         <SkillsSection />
       </Animatify>
     </div>

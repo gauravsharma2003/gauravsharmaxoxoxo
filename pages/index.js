@@ -70,7 +70,7 @@ const Home = () => {
           </a>
         </Link>
       </span>
-      <SubHeader title="Why hire me?" headingLevel={2} homeIndex="04" caption="Product judgment, technical fluency, and the ability to carry a decision through delivery." />
+      <SubHeader title="Why hire me?" headingLevel={2} homeIndex="04" caption="AI product thinking, measurable automation, and the judgment to turn new capabilities into useful experiences." />
       <SkillsSection />
     </div>
   );
