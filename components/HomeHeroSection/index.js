@@ -70,13 +70,13 @@ export default function HomeHeroSection() {
       <div className="absolute w-full h-full pointer-events-none">
         <div className="skew absolute top-0 left-0 bottom-0 right-0 m-auto z-10 h-fit w-fit px-10">
           <div className="md:px-6">
-            <span className="m-auto block text-2xl md:text-xl text-lightTextColor dark:text-white md:text-center">
-              Hi {"I'm "}
+            <span className="m-auto block text-base md:text-xl text-lightTextColor dark:text-white md:text-center">
               <span
                 className="underline underline-offset-8 text-pink dark:text-blue"
               >
                 Gaurav Sharma
               </span>
+              {" · Associate Product Manager (APM) at Paytm"}
             </span>
             <h1 className="md:leading-[9rem] mb-6 block text-[13vw] sm:text-[7rem] text-lightTextColor dark:text-white md:text-center font-secondary max-w-[100vw] md:max-w-[80rem]">
               Building Products, Experiences & Scalable Systems

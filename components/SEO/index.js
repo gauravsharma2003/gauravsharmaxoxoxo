@@ -24,7 +24,7 @@ export default function SEO({ title, desc, img }) {
         "@id": `${siteUrl}/#gaurav-sharma`,
         name: "Gaurav Sharma",
         url: siteUrl,
-        jobTitle: "Product Professional",
+        jobTitle: "Associate Product Manager",
         sameAs: [
           "https://www.linkedin.com/in/gauravsharma2003/",
           "https://github.com/gauravsharma2003",

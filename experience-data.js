@@ -4,7 +4,7 @@ var experienceData = [
 
     {
     icon: assetUrl("/assets/images/times-internet-logo.png"),
-    date: "Consulting • September 2025 - Present",
+    date: "Consulting • Started September 2025 · Former role",
     organization: "Times Internet",
     position: "Associate Product Consultant",
     desc: `• Integrated ET Markets into the TOI App to unlock a new high-intent market segment, coordinating across editorial, engineering, and business teams.
