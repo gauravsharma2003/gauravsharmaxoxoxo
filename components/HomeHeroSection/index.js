@@ -73,7 +73,7 @@ export default function HomeHeroSection() {
           <p className="mb-6 text-xs sm:text-sm uppercase tracking-[0.2em] text-lightTextColor/80 dark:text-white/80">
             Gaurav Sharma
           </p>
-          <h1 className="max-w-[13ch] font-secondary text-[clamp(3.6rem,7vw,7rem)] leading-[1.06] tracking-[-0.035em] text-lightTextColor dark:text-white">
+          <h1 className="max-w-[13ch] font-secondary text-[clamp(46px,12vw,56px)] md:text-[clamp(3.6rem,7vw,7rem)] leading-[1.06] tracking-[-0.035em] text-lightTextColor dark:text-white">
             Making complex ideas useful.
           </h1>
           <p className="mt-7 max-w-[34rem] text-lg sm:text-xl md:text-2xl leading-[1.45] text-lightTextColor dark:text-white">

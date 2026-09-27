@@ -17,7 +17,7 @@ export default function ProjectCards({
           <Heading className="text-lightTextColor dark:text-white text-4xl">
             {title}
           </Heading>
-          <span className="block text-lightTextColor dark:text-white text-xl mt-4 leading-10">
+          <span className="block text-lightTextColor dark:text-white text-lg md:text-xl mt-4 leading-relaxed md:leading-10">
             {miniDesc}
           </span>
           <div className="mt-6">
