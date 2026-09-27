@@ -84,6 +84,7 @@ const startCanvas = () => {
     this.deltaY = 0;
     this.down = false;
     this.moved = false;
+    this.insideCanvas = false;
     this.color = [30, 0, 300];
   }
 
@@ -1385,6 +1386,22 @@ const startCanvas = () => {
     return Math.floor(input * pixelRatio);
   }
 
+  function getCanvasPointerPosition(clientX, clientY) {
+    var bounds = canvas.getBoundingClientRect();
+    if (
+      !bounds.width || !bounds.height ||
+      clientX < bounds.left || clientX > bounds.right ||
+      clientY < bounds.top || clientY > bounds.bottom
+    ) {
+      return null;
+    }
+
+    return {
+      x: ((clientX - bounds.left) / bounds.width) * canvas.width,
+      y: ((clientY - bounds.top) / bounds.height) * canvas.height,
+    };
+  }
+
   function hashCode(s) {
     if (s.length == 0) {
       return 0;
@@ -1402,9 +1419,18 @@ const startCanvas = () => {
     if (run !== activeRun) return;
     window.addEventListener("mousemove", function (e) {
       var pointer = pointers[0];
-      var posX = scaleByPixelRatio(e.offsetX);
-      var posY = scaleByPixelRatio(e.offsetY);
-      updatePointerMoveData(pointer, posX, posY);
+      var position = getCanvasPointerPosition(e.clientX, e.clientY);
+      if (!position) {
+        pointer.insideCanvas = false;
+        pointer.moved = false;
+        return;
+      }
+      if (!pointer.insideCanvas) {
+        updatePointerDownData(pointer, -1, position.x, position.y);
+        pointer.insideCanvas = true;
+        return;
+      }
+      updatePointerMoveData(pointer, position.x, position.y);
     }, listenerOptions);
 
     window.addEventListener("mouseup", function () {
@@ -1418,14 +1444,15 @@ const startCanvas = () => {
         pointers.push(new pointerPrototype());
       }
       for (var i = 0; i < touches.length; i++) {
-        var posX = scaleByPixelRatio(touches[i].pageX);
-        var posY = scaleByPixelRatio(touches[i].pageY);
+        var position = getCanvasPointerPosition(touches[i].clientX, touches[i].clientY);
+        if (!position) continue;
         updatePointerDownData(
           pointers[i + 1],
           touches[i].identifier,
-          posX,
-          posY
+          position.x,
+          position.y
         );
+        pointers[i + 1].insideCanvas = true;
       }
     }, listenerOptions);
 
@@ -1439,9 +1466,18 @@ const startCanvas = () => {
           if (!pointer?.down) {
             continue;
           }
-          var posX = scaleByPixelRatio(touches[i].pageX);
-          var posY = scaleByPixelRatio(touches[i].pageY);
-          updatePointerMoveData(pointer, posX, posY);
+          var position = getCanvasPointerPosition(touches[i].clientX, touches[i].clientY);
+          if (!position) {
+            pointer.insideCanvas = false;
+            pointer.moved = false;
+            continue;
+          }
+          if (!pointer.insideCanvas) {
+            updatePointerDownData(pointer, touches[i].identifier, position.x, position.y);
+            pointer.insideCanvas = true;
+            continue;
+          }
+          updatePointerMoveData(pointer, position.x, position.y);
         }
       },
       listenerOptions
