@@ -82,13 +82,13 @@ export default function HomeHeroSection() {
               Building Products, Experiences & Scalable Systems
             </h1>
             <span className="md:m-auto block text-lightTextColor dark:text-white text-2xl md:text-xl leading-10 md:text-center max-w-xl my-4">
-              I work at the intersection of{" "}
+              At Paytm, I work on agentic AI products at the intersection of{" "}
               <span
                 className="text-pink dark:text-blue"
               >
                 product, technology, and execution
               </span>
-              , focused on building user-first products.
+              , focused on building user-first experiences.
             </span>
 
             <div className="flex justify-center items-center gap-6 mt-8">

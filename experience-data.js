@@ -1,21 +1,51 @@
 import assetUrl from "./asset-url";
 
 var experienceData = [
+  {
+    // Official Paytm press-kit asset: https://ir.paytm.com/press-kit
+    icon: assetUrl("/assets/images/paytm-logo.png"),
+    organization: "Paytm",
+    position: "Associate Product Manager",
+    date: "Full-time • September 2026 - Present",
+    desc: `• Working on Check-in, a new Paytm Travel initiative exploring an agentic travel experience for a new-age audience, with a design approach distinct from conventional travel apps.
 
-    {
+• Collaborating with data science, engineering, product, and business teams to shape the experience and technical approach.
+
+• Exploring AI-driven automations that remove repetitive work and reduce operational overhead across the journey.`,
+    focusLabel: "Current initiative",
+    focus: "Check-in · Paytm Travel",
+    website: "https://paytm.com/"
+  },
+  {
     icon: assetUrl("/assets/images/times-internet-logo.png"),
-    date: "Consulting • Started September 2025 · Former role",
+    date: "Full-time • June 2026 - August 2026",
+    organization: "Times Internet",
+    position: "Associate Product Manager",
+    desc: `• Led product initiatives for the TOI One ecosystem across TOI, ET Markets, and ET News, focused on discovery, personalisation, first-party data capture, and Day 0 churn.
+
+• Built AI-powered products using LLMs, embeddings, and RAG pipelines for content intelligence, workflow automation, and personalisation.
+
+• Improved video product and distribution, contributing to 50% revenue growth across the web video vertical.
+
+• Led Defence HQ, an AI-native defence intelligence platform using LLM pipelines for conflict detection, summarisation, classification, and real-time visualisation.
+
+• Wrote PRDs, prioritised roadmaps, defined success metrics, and coordinated engineering, editorial, and business teams through launch.`,
+    website: "https://timesinternet.in"
+  },
+  {
+    icon: assetUrl("/assets/images/times-internet-logo.png"),
+    date: "Consulting • September 2025 - May 2026",
     organization: "Times Internet",
     position: "Associate Product Consultant",
-    desc: `• Integrated ET Markets into the TOI App to unlock a new high-intent market segment, coordinating across editorial, engineering, and business teams.
+    desc: `• Improved the TOI App games funnel from 18% to 74% through analytics-led UX changes, experimentation, and clearer navigation.
 
-• Led the homepage revamp during the TOI App redesign, improving visual hierarchy, personalization, and content discovery.
+• Integrated ET Markets into the TOI ecosystem, expanding the content offering for a finance-focused audience.
 
-• Improved the games section funnel from 18% to 74% by identifying leakage through data analysis and redesigning UI entry points.
+• Worked across content, product, and growth teams to improve engagement, session depth, and retention through data-backed decisions.
 
-• Collaborated with ML, engineering, design, and editorial teams to operationalize news personalization using behavioral signals.
+• Built AI-powered newsletter and game-generation pipelines that reduced editorial effort by over 90%, turning a three-person, full-day workflow into a one-hour review.
 
-• Translated business and editorial goals into clear product requirements, ensuring alignment and on-time execution across parallel initiatives.`,
+• Conducted user research, competitor analysis, and product experiments to identify growth and adoption opportunities.`,
     website: "https://timesinternet.in"
   },
   {
@@ -29,9 +59,7 @@ var experienceData = [
 
 • Set up end-to-end product tracking using Google Analytics (GA4) and Microsoft Clarity to identify drop-offs and inform product decisions.
 
-• Conducted competitor analysis and user research to guide feature strategy and editorial innovation.
-
-• Built AI-driven pipelines for news curation and game generation, reducing a full-day, three-person workflow to a one-hour editorial review.`,
+• Conducted competitor analysis and user research to guide feature strategy and editorial innovation.`,
     website: "https://timesinternet.in"
   },
 

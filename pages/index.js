@@ -15,7 +15,7 @@ const Home = () => {
     <div className="w-full h-fit">
       <SEO
         title="Gaurav Sharma | Associate Product Manager at Paytm"
-        desc="Gaurav Sharma is an Associate Product Manager (APM) at Paytm and former Times Internet product consultant. Explore his product portfolio and consumer app case studies."
+        desc="Gaurav Sharma is an Associate Product Manager (APM) working on agentic AI products at Paytm, after product roles at Times Internet. Explore his portfolio and case studies."
         img="/assets/images/seo/gaurav.webp"
       />
       <HomeHeroSection />

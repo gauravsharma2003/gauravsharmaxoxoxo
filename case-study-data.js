@@ -10,7 +10,7 @@ const caseStudies = [
       "How Gaurav Sharma used data analysis and UX improvements to improve the Times of India App games funnel from 18% to 74%.",
     summary:
       "Improving discovery and entry points for the Times of India App games experience.",
-    role: "Product Management Intern, Times Internet",
+    role: "Associate Product Consultant, Times Internet",
     outcome: "Improved the games section funnel from 18% to 74%.",
     challenge:
       "The games experience had clear leakage between discovery and entry. The priority was to identify where users were dropping off and create a more direct path into the experience.",
@@ -54,7 +54,7 @@ const caseStudies = [
       "How Gaurav Sharma helped lead the Times of India App homepage revamp, improving hierarchy, personalisation, and content discovery.",
     summary:
       "Helping shape a homepage revamp around hierarchy, personalisation, and content discovery.",
-    role: "Associate Product Consultant, Times Internet",
+    role: "Associate Product Manager, Times Internet",
     outcome: "Supported the TOI App homepage redesign across visual hierarchy, personalisation, and content discovery.",
     challenge:
       "A high-traffic news homepage must help readers find relevant content quickly while balancing editorial priorities, product constraints, and a coherent visual system.",
@@ -75,7 +75,7 @@ const caseStudies = [
       "A product operations case study on operationalising news personalisation with behavioural signals across ML, engineering, design, and editorial teams.",
     summary:
       "Translating behavioural signals and newsroom goals into an operational personalisation workflow.",
-    role: "Associate Product Consultant, Times Internet",
+    role: "Associate Product Manager, Times Internet",
     outcome: "Helped operationalise news personalisation through collaboration across ML, engineering, design, and editorial teams.",
     challenge:
       "Personalisation only creates value when behavioural signals, editorial judgement, and product delivery work together in a dependable workflow.",

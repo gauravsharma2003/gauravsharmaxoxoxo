@@ -67,7 +67,7 @@ export default function ExperienceSection() {
     );
 }
 
-function Experience({ icon, date, organization, position, desc, website }) {
+function Experience({ icon, date, organization, position, desc, focus, focusLabel, website }) {
     return (
         <article data-experience-card className="flex flex-col gap-4 flex-none snap-start w-[85vw] md:w-[42rem] min-h-[30rem] justify-between p-6 md:p-8 rounded-xl bg-lightBgSecondaryColor dark:bg-bgSecondaryColor">
             <div className="flex flex-col gap-4 flex-1">
@@ -78,7 +78,7 @@ function Experience({ icon, date, organization, position, desc, website }) {
                         decoding="async"
                         width={128}
                         height={64}
-                        className="h-16 w-32 rounded-lg bg-white p-2 select-none object-contain"
+                        className={`h-16 w-32 rounded-lg select-none ${organization === "Paytm" ? "object-cover" : "bg-white p-2 object-contain"}`}
                         alt={organization + " logo"}
                     />
                     <div className="flex flex-col">
@@ -90,6 +90,12 @@ function Experience({ icon, date, organization, position, desc, website }) {
                     <div className="text-xl text-lightTextColor dark:text-white">{date}</div>
                     <p className="text-base md:text-lg leading-7 text-lightTextColor dark:text-white whitespace-pre-line">{desc}</p>
                 </div>
+                {focus && (
+                    <div className="mt-auto border-t border-lightTextColor/15 pt-5 dark:border-white/15">
+                        <p className="text-xs uppercase tracking-[0.18em] text-lightTextColor/60 dark:text-white/60">{focusLabel}</p>
+                        <p className="mt-2 font-secondary text-3xl leading-tight text-lightTextColor dark:text-white">{focus}</p>
+                    </div>
+                )}
             </div>
             <Link href={website}>
                 <a
